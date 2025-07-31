@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Idosos</title>
+    <link rel="stylesheet" href="css/style-buscarasilo.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="img/happyidosos.png" alt="Logo Happy Idosos" />
+            </a>
+            <div class="menu-e-botoes">
+                <ul class="nav-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="asilo.html">Buscar Asilos</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#" class="botao_especial"><span>Editar Perfil Voluntário</span></a>
+                    <a href="#" class="botao_especial"><span>Editar Perfil Asilo</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <link rel="stylesheet" href="css/style-buscarasilo.css">
+
+<div class="page-wrapper">
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Encontre Asilos e Centros de Atividades</h1>
+        <p>Busque por instituições próximas a você e descubra como pode ajudar.</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Digite o nome ou cidade da instituição" />
+            <button>Buscar</button>
+        </div>
+    </section>
+
+    <!-- LISTAGEM DE ASILOS -->
+    <section class="asilos-section">
+        <div class="container">
+            <div class="asilos-container" id="asilos-container">
+                <!-- Card de exemplo -->
+                <div class="asilo-card">
+                    <h3>Lar dos Idosos Felizes</h3>
+                    <p>Um espaço acolhedor para idosos com diversas atividades recreativas e culturais.</p>
+                    <p>📍 São Paulo, SP</p>
+                    <p>🎉 2 eventos próximos</p>
+                    <div class="btn-group">
+                        <button class="ver-detalhes">Ver Detalhes</button>
+                        <button class="ver-eventos">Ver Eventos</button>
+                    </div>
+                </div>
+                <!-- Outros cards serão adicionados via JS/API futuramente -->
+            </div>
+
+            <!-- BOTÃO CARREGAR MAIS -->
+            <button class="btn-carregar">Carregar Mais</button>
+        </div>
+    </section>
+
+</div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Happy Idosos &copy; 2025. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

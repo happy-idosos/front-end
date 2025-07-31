@@ -1,0 +1,379 @@
+@charset "UTF-8";
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* NAVBAR */
+.navbar {
+  background: transparent;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  margin-left: 30px;
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo { /* align-items: center;   display: flex;*/
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #244a96;
+  text-decoration: none;
+  margin-left: 0;
+}
+
+.logo img {
+  height: 95px;
+  width: auto;
+  max-height: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 8px 15px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.nav-links a:hover {
+  color: white;
+  background-color: #244a96;
+}
+.menu-e-botoes {
+    display: flex;
+    align-items: center; /* Alinha links e botões verticalmente */
+    gap: 20px; /* Adiciona um espaçamento entre a lista de links e os botões */
+    margin-left: 22px;
+  }
+.botao_especial {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #333;
+  letter-spacing: 0.3px;
+  text-align: center;
+  position: relative;
+  transition: all 0.35s;
+  margin: 4px;
+  overflow: hidden;
+  background: transparent;
+  white-space: nowrap;
+  border-radius: 6px;
+}
+
+.botao_especial span {
+  position: relative;
+  z-index: 2;
+}
+.botao_especial::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #244a96;
+  transition: all 0.35s;
+  z-index: 1;
+}
+.botao_especial:hover {
+  color: #fff;
+}
+.botao_especial:hover::after {
+  width: 100%;
+}
+.btn-secondary,
+.btn-outline {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-secondary {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+}
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+}
+.btn-secondary:hover {
+  background: white;
+  color: #244a96;
+  border: 2px solid white;
+}
+.btn-outline:hover {
+  background: white;
+  color: #244a96;
+  border: 2px solid white;
+}
+
+/* COMO FUNCIONA */
+.como-funciona {
+  padding: 60px 0;
+  text-align: center;
+}
+.como-funciona h2 {
+  color: #244a96;
+  margin-bottom: 40px;
+  font-size: 25px;
+  font-weight: 800;
+}
+.como-funciona .cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+.como-funciona .cards .card {
+  width: 280px;
+  max-width: 300px;
+  border: 2px solid #424242;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 2px 4px 12px #7e7d7d;
+}
+.como-funciona .cards .card img {
+  margin-bottom: 15px;
+}
+
+/* BENEFÍCIOS */
+.beneficios {
+  background: #f4f4f4;
+  padding: 60px 0;
+  text-align: center;
+}
+.beneficios h2 {
+  color: #244a96;
+  margin-bottom: 40px;
+}
+.beneficios .beneficios-content {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.beneficios .beneficio {
+  flex: 1 1 300px;
+  max-width: 500px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.beneficios .beneficio h3 {
+  color: #244a96;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.beneficios .beneficio ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+
+/* CTA */
+.cta {
+  background: #244a96;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+.cta .cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* FOOTER */
+.footer {
+  background: #eee;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+/* HISTÓRIA */
+.historia {
+  background: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+.historia h2 {
+  color: #244a96;
+  margin-bottom: 20px;
+}
+.historia p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* INTEGRANTES */
+.integrantes {
+  background: #f4f4f4;
+  padding: 60px 0;
+  text-align: center;
+}
+.integrantes h2 {
+  color: #244a96;
+  margin-bottom: 40px;
+}
+.integrantes .integrantes-content {
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+.integrantes .grupo h3 {
+  color: #112a63;
+  margin-bottom: 10px;
+}
+.integrantes .grupo ul {
+  list-style: none;
+  padding-left: 0;
+}
+.integrantes .grupo ul li {
+  margin-bottom: 6px;
+  color: #333;
+}
+.integrantes .integrantes-img-wrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.integrantes .integrantes-img-wrapper img {
+  width: 50%;
+  max-width: 700px;
+  height: auto;
+  border: 8px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .navbar .container,
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .hero-content,
+  .beneficios-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-buttons,
+  .cta-buttons {
+    justify-content: center;
+  }
+  .logo img {
+    height: 60px;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+  .integrantes .integrantes-content {
+    flex-direction: column;
+  }
+}
+.divisor {
+  border: none;
+  height: 3px;
+  background-color:rgba(36, 74, 150, 1); /* Azul Royal */
+  margin: 40px auto;
+  width: 70%; /* ou 100% se quiser ocupar toda a largura */
+  border-radius: 5 px;
+}
+.carousel-inner img {
+  max-height: 650px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 20%; /* 40% da altura pra baixo, abaixa o foco */
+}
+.nav-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.menu-e-botoes {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
