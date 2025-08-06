@@ -5,214 +5,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Idosos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="css/style-index.css" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="img/happyidosos.png" alt="Logo Happy Idosos" />
-            </a>
-            <div class="menu-e-botoes">
-                <ul class="nav-links">
-                    <li><a href="index.php">Início</a></li>
-                    <li><a href="asilos.html">Buscar Asilos</a></li>
-                    <li><a href="eventos.php">Eventos</a></li>
-                    <li><a href="contato.php">Contato</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <a href="#" class="botao_especial"><span>Editar Perfil Voluntário</span></a>
-                    <a href="#" class="botao_especial"><span>Editar Perfil Asilo</span></a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/happyidosos.png" alt="Logo Happy Idosos" style="height: 100px;" >
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="asilos.html">Buscar Asilos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eventos.php">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.php">Contato</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex flex-column flex-lg-row ms-lg-3 mt-3 mt-lg-0">
+                        <a href="#" class="btn btn-outline-primary me-lg-2 mb-2 mb-lg-0">Editar Perfil Voluntário</a>
+                        <a href="#" class="btn btn-primary">Editar Perfil Asilo</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
     
-    <div id="carouselExampleCaptions" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="img/mulheres-trabalhando-juntas-no-campo (1).jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h2>Conectando Voluntários e Idosos</h2>
-        <p>O projeto Happy Idosos facilita o acesso entre voluntários e entidades...</p>
-        <a href="buscarasilo.php" class="btn-secondary">Encontrar Asilos</a>
-        <a href="eventos.php" class="btn-outline">Ver eventos</a>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="img/enfermeira-examinando-mulher-idosa-ao-ar-livre-em-uma-casa-de-repouso.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h2>Conectando Voluntários e Idosos</h2>
-        <p>O projeto Happy Idosos facilita o acesso entre voluntários e entidades...</p>
-        <a href="buscarasilo.php" class="btn-secondary">Encontrar Asilos</a>
-        <a href="eventos.php" class="btn-outline">Ver eventos</a>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="img/mulheres-trabalhando-juntas-no-campo.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h2>Conectando Voluntários e Idosos</h2>
-        <p>O projeto Happy Idosos facilita o acesso entre voluntários e entidades...</p>
-        <a href="buscarasilo.php" class="btn-secondary">Encontrar Asilos</a>
-        <a href="eventos.php" class="btn-outline">Ver eventos</a>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<hr class="divisor">
-    <section class="como-funciona">
-        <div class="container">
-            <h2>Como Funciona</h2>
-            <div class="cards">
-            <div class="card">
-                <img src="img/idoso.png" width="35px" alt="Ícone 1">
-                <h3>Encontre Asilos</h3>
-                <p>Busque por casas de repouso e centros de atividades para idosos próximos a você.</p>
-            </div>
-            <div class="card">
-                <img src="img/evento-eleitoral-em-um-calendario-com-o-simbolo-de-estrela.png" width="35px" alt="Ícone 2">
-                <h3>Participe de Eventos</h3>
-                <p>Inscreva-se em eventos organizados pelas instituições e compartilhe seus talentos.</p>
-            </div>
-            <div class="card">
-                <img src="img/aperto-de-mao.png" width="35px" alt="Ícone 3">
-                <h3>Faça a Diferença</h3>
-                <p>Crie conexões significativas e troque experiências valiosas com os idosos.</p>
-            </div>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-    </section>
-<hr class="divisor">
-    <section class="beneficios">
-    <h2>Benefícios</h2>
-    <div class="beneficios-content">
-        <div class="beneficio">
-        <h3>Para os Idosos</h3>
-        <ul>
-            <li>Maior interação social e redução da solidão</li>
-            <li>Acesso a atividades culturais e recreativas</li>
-            <li>Oportunidade de compartilhar conhecimentos e experiências</li>
-        </ul>
-        </div>
-        <div class="beneficio">
-        <h3>Para os Voluntários</h3>
-        <ul>
-            <li>Experiência enriquecedora de troca intergeracional</li>
-            <li>Oportunidade de desenvolver habilidades sociais e empáticas</li>
-            <li>Satisfação pessoal por contribuir com uma causa social</li>
-        </ul>
-        </div>
-    </div>
-    </section>
-
-
-    <section class="historia">
-        <div class="container">
-            <h2>História do Projeto</h2>
-            <p>
-            O Happy Idosos nasceu da integração de três vertentes metodológicas que se complementam: a investigação teórica
-            (bibliográfica e exploratória), a observação direta da realidade (pesquisa de campo) e a experimentação prática
-            por meio do desenvolvimento de uma aplicação digital. Essa escolha metodológica foi guiada pela intenção de
-            compreender a fundo o cenário estudado, idealizar uma solução significativa para os envolvidos e testar, na
-            prática, sua aplicabilidade.
-            A etapa prática do projeto consistiu no desenvolvimento da aplicação digital, fundamentado nas demandas
-            identificadas nas fases anteriores. Utilizamos a metodologia aplicada, organizando as atividades por meio do
-            Microsoft Planner, o que facilitou a divisão de tarefas, o acompanhamento do progresso da equipe e o registro
-            contínuo no diário de bordo digital. A plataforma, construída com PHP, MySQL, JavaScript e CSS, teve suas
-            funcionalidades priorizadas com base nos dados da pesquisa, e a interface foi pensada com foco em usabilidade,
-            acessibilidade e adequação ao público-alvo. A cada nova funcionalidade desenvolvida, foram realizados testes
-            internos de usabilidade, garantindo melhorias contínuas.
-            Antes disso, foi realizada uma pesquisa de campo com alunos e professores da Etec Profª Maria Cristina Medeiros,
-            que contribuíram com opiniões diversas sobre o tema da interação intergeracional. A pluralidade das respostas,
-            oriunda de diferentes faixas etárias, enriqueceu significativamente a construção do projeto, proporcionando um
-            panorama mais amplo sobre as percepções juvenis a respeito dos idosos institucionalizados.
-            Paralelamente, o Design Thinking foi adotado como metodologia transversal em todas as fases do projeto. Da
-            Imersão à Síntese, a abordagem guiou a equipe na escuta ativa, na definição de problemas reais e na criação de
-            soluções empáticas voltadas às necessidades específicas dos idosos em asilos.
-            O ponto de partida foi a pesquisa bibliográfica e exploratória, que permitiu um mergulho nos desafios
-            enfrentados por idosos em instituições de longa permanência, especialmente no que diz respeito à carência de
-            vínculos afetivos. Desde o início, reconheceu-se o valor do contato entre gerações como ferramenta de
-            transformação social com destaque para o voluntariado jovem como elo promissor entre esses dois mundos.
-
-            </p>
-        </div>
-    </section>
-<hr class="divisor">
-    <section class="integrantes">
-        <div class="container">
-            <h2>Integrantes</h2>
-            <div class="integrantes-content">
-                <div class="grupo">
-                    <h3>Equipe de Recursos Humanos</h3>
-                    <ul>
-                    <li>Ana Caroline da Silva Santos</li>
-                    <li>Evellyn Soares Ferreira</li>
-                    <li>Giovanna Queiroz Carvalho</li>
-                    <li>Heloisa Emanuele Gonçalves Godinho</li>
-                    <li>Heloysa Beatriz dos Santos</li>
-                    </ul>
-                </div>
-                <div class="grupo">
-                    <h3>Equipe de Informática</h3>
-                    <ul>
-                    <li>Vinícius Araujo Ramos</li>
-                    <li>Tiago de Carvalho Estrada</li>
-                    <li>Lucas Martins Pereira</li>
-                    <li>Pedro Henrique Assunção Medeiros</li>
-                    <li>Wesley Mendes de Sousa</li>
-                    </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/mulheres-trabalhando-juntas-no-campo (1).jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Conectando Voluntários e Idosos</h2>
+                    <p>O projeto Happy Idosos facilita o acesso entre voluntários e entidades...</p>
+                    <a href="buscarasilo.php" class="btn btn-secondary">Encontrar Asilos</a>
+                    <a href="eventos.php" class="btn btn-outline-light">Ver eventos</a>
                 </div>
             </div>
-            <div class="integrantes-img-wrapper">
-            <img src="img/equipefoto.jpg" alt="Ilustração Happy Idosos" />
+            <div class="carousel-item">
+                <img src="img/enfermeira-examinando-mulher-idosa-ao-ar-livre-em-uma-casa-de-repouso.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Conectando Voluntários e Idosos</h2>
+                    <p>O projeto Happy Idosos facilita o acesso entre voluntários e entidades...</p>
+                    <a href="buscarasilo.php" class="btn btn-secondary">Encontrar Asilos</a>
+                    <a href="eventos.php" class="btn btn-outline-light">Ver eventos</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/mulheres-trabalhando-juntas-no-campo.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Conectando Voluntários e Idosos</h2>
+                    <p>O projeto Happy Idosos facilita o acesso entre voluntários e entidades...</p>
+                    <a href="buscarasilo.php" class="btn btn-secondary">Encontrar Asilos</a>
+                    <a href="eventos.php" class="btn btn-outline-light">Ver eventos</a>
+                </div>
             </div>
         </div>
-    </section>
-
-
-    <section class="cta">
-        <div class="container">
-            <h2>Junte-se a Nós</h2>
-            <p>Faça parte dessa iniciativa e nos ajude a transformar a vida dos idosos.</p>
-            <div class="cta-buttons">
-            <a href="buscarasilo.php" class="btn-secondary">Encontrar Asilos</a>
-            <a href="contato.php" class="btn-outline">Contate-nos</a>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <hr class="divisor">
+    
+    <main>
+        <section class="como-funciona">
+            <div class="container text-center py-5">
+                <h2 class="mb-4">Como Funciona</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 p-4">
+                            <img src="img/idoso.png" width="35px" alt="Ícone 1" class="mx-auto mb-3">
+                            <div class="card-body">
+                                <h3 class="card-title">Encontre Asilos</h3>
+                                <p class="card-text">Busque por casas de repouso e centros de atividades para idosos próximos a você.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 p-4">
+                            <img src="img/evento-eleitoral-em-um-calendario-com-o-simbolo-de-estrela.png" width="35px" alt="Ícone 2" class="mx-auto mb-3">
+                            <div class="card-body">
+                                <h3 class="card-title">Participe de Eventos</h3>
+                                <p class="card-text">Inscreva-se em eventos organizados pelas instituições e compartilhe seus talentos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 p-4">
+                            <img src="img/aperto-de-mao.png" width="35px" alt="Ícone 3" class="mx-auto mb-3">
+                            <div class="card-body">
+                                <h3 class="card-title">Faça a Diferença</h3>
+                                <p class="card-text">Crie conexões significativas e troque experiências valiosas com os idosos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <hr class="divisor">
+        
+        <section class="beneficios container py-5">
+            <h2 class="text-center mb-4">Benefícios</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Para os Idosos</h3>
+                            <ul>
+                                <li>Maior interação social e redução da solidão</li>
+                                <li>Acesso a atividades culturais e recreativas</li>
+                                <li>Oportunidade de compartilhar conhecimentos e experiências</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Para os Voluntários</h3>
+                            <ul>
+                                <li>Experiência enriquecedora de troca intergeracional</li>
+                                <li>Oportunidade de desenvolver habilidades sociais e empáticas</li>
+                                <li>Satisfação pessoal por contribuir com uma causa social</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="historia bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">História do Projeto</h2>
+                <p>O Happy Idosos nasceu da integração de três vertentes metodológicas que se complementam: a investigação teórica (bibliográfica e exploratória), a observação direta da realidade (pesquisa de campo) e a experimentação prática por meio do desenvolvimento de uma aplicação digital. Essa escolha metodológica foi guiada pela intenção de compreender a fundo o cenário estudado, idealizar uma solução significativa para os envolvidos e testar, na prática, sua aplicabilidade.</p>
+                <p>A etapa prática do projeto consistiu no desenvolvimento da aplicação digital, fundamentado nas demandas identificadas nas fases anteriores. Utilizamos a metodologia aplicada, organizando as atividades por meio do Microsoft Planner, o que facilitou a divisão de tarefas, o acompanhamento do progresso da equipe e o registro contínuo no diário de bordo digital. A plataforma, construída com PHP, MySQL, JavaScript e CSS, teve suas funcionalidades priorizadas com base nos dados da pesquisa, e a interface foi pensada com foco em usabilidade, acessibilidade e adequação ao público-alvo. A cada nova funcionalidade desenvolvida, foram realizados testes internos de usabilidade, garantindo melhorias contínuas.</p>
+                <p>Antes disso, foi realizada uma pesquisa de campo com alunos e professores da Etec Profª Maria Cristina Medeiros, que contribuíram com opiniões diversas sobre o tema da interação intergeracional. A pluralidade das respostas, oriunda de diferentes faixas etárias, enriqueceu significativamente a construção do projeto, proporcionando um panorama mais amplo sobre as percepções juvenis a respeito dos idosos institucionalizados.</p>
+                <p>Paralelamente, o Design Thinking foi adotado como metodologia transversal em todas as fases do projeto. Da Imersão à Síntese, a abordagem guiou a equipe na escuta ativa, na definição de problemas reais e na criação de soluções empáticas voltadas às necessidades específicas dos idosos em asilos.</p>
+                <p>O ponto de partida foi a pesquisa bibliográfica e exploratória, que permitiu um mergulho nos desafios enfrentados por idosos em instituições de longa permanência, especialmente no que diz respeito à carência de vínculos afetivos. Desde o início, reconheceu-se o valor do contato entre gerações como ferramenta de transformação social com destaque para o voluntariado jovem como elo promissor entre esses dois mundos.</p>
+            </div>
+        </section>
+        
+        <hr class="divisor">
+        
+        <section class="integrantes container py-5">
+            <h2 class="text-center mb-4">Integrantes</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Equipe de Recursos Humanos</h3>
+                            <ul>
+                                <li>Ana Caroline da Silva Santos</li>
+                                <li>Evellyn Soares Ferreira</li>
+                                <li>Giovanna Queiroz Carvalho</li>
+                                <li>Heloisa Emanuele Gonçalves Godinho</li>
+                                <li>Heloysa Beatriz dos Santos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 p-4">
+                        <div class="card-body">
+                            <h3 class="card-title">Equipe de Informática</h3>
+                            <ul>
+                                <li>Vinícius Araujo Ramos</li>
+                                <li>Tiago de Carvalho Estrada</li>
+                                <li>Lucas Martins Pereira</li>
+                                <li>Pedro Henrique Assunção Medeiros</li>
+                                <li>Wesley Mendes de Sousa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <img src="img/equipefoto.jpg" alt="Ilustração Happy Idosos" class="img-fluid rounded">
+            </div>
+        </section>
+        
+         <section class="cta text-center py-5">
+            <div class="container">
+                <h2>Junte-se a Nós</h2>
+                <p class="lead mb-4">Faça parte dessa iniciativa e nos ajude a transformar a vida dos idosos.</p>
+                <div class="d-grid gap-2 d-md-block">
+                    <a href="buscarasilo.php" class="btn btn-secondary btn-lg">Encontrar Asilos</a>
+                    <a href="contato.php" class="btn btn-outline-light btn-lg">Contate-nos</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <footer class="footer">
+    <footer class="footer bg-dark text-white text-center py-3">
         <div class="container">
-            <p>Happy Idosos &copy; 2025. Todos os direitos reservados.</p>
+            <p class="mb-0">Happy Idosos &copy; 2025. Todos os direitos reservados.</p>
         </div>
     </footer>
-<svg style="display: none;">
-  <filter id="goo">
-    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-    <feColorMatrix in="blur" mode="matrix"
-      values="1 0 0 0 0  
-              0 1 0 0 0  
-              0 0 1 0 0  
-              0 0 0 20 -10"
-      result="goo" />
-    <feBlend in="SourceGraphic" in2="goo" />
-  </filter>
-</svg>
 </body>
 </html>

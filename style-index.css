@@ -1,0 +1,221 @@
+@charset "UTF-8";
+/* RESET E ESTILOS GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 80px; /* Adiciona padding para que o conteúdo não fique escondido atrás da navbar fixa */
+}
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+/* Estilos para a Navbar */
+.navbar {
+    background-color: #fff !important; /* Cor de fundo da navbar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.navbar-brand img {
+    height: 60px; /* Ajuste o tamanho do logo */
+}
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    padding: 8px 15px !important;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-size: 20px; /* Tamanho da fonte dos links */
+}
+.nav-link:hover, .nav-link.active {
+    color: white !important;
+    background-color: #244a96;
+}
+.navbar-nav .nav-item {
+    margin-right: 10px;
+}
+/* Estilos para os botões de ação na navbar */
+.btn-outline-primary {
+    color: #244a96;
+    border-color: #244a96;
+    transition: all 0.35s;
+    font-size: 14px;
+    padding: 5px 12px;
+}
+.btn-outline-primary:hover {
+    background-color: #244a96;
+    color: #fff;
+}
+.btn-primary {
+    background-color: #244a96;
+    border-color: #244a96;
+    color: #fff;
+    transition: all 0.35s;
+    font-size: 14px;
+    padding: 5px 12px;
+}
+.btn-primary:hover {
+    background-color: #112a63;
+    border-color: #112a63;
+}
+/* Estilos para o Carrossel */
+.carousel-inner img {
+    max-height: 650px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+.carousel-caption h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.carousel-caption p {
+    font-size: 1.2rem;
+}
+.carousel-caption .btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.carousel-caption .btn-secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+.carousel-caption .btn-secondary:hover {
+    background: white;
+    color: #244a96;
+}
+.carousel-caption .btn-outline-light {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+.carousel-caption .btn-outline-light:hover {
+    background: white;
+    color: #244a96;
+}
+/* SEÇÕES PADRÃO */
+.divisor {
+    border: none;
+    height: 3px;
+    background-color: rgba(36, 74, 150, 1);
+    margin: 40px auto;
+    width: 70%;
+    border-radius: 5px;
+}
+h2 {
+    color: #244a96;
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+.como-funciona, .beneficios, .historia, .integrantes, .cta {
+    padding: 60px 0;
+}
+/* COMO FUNCIONA */
+.como-funciona .card {
+    border: 2px solid #424242;
+    border-radius: 15px;
+    box-shadow: 2px 4px 12px #7e7d7d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.como-funciona .card img {
+    width: 35px;
+}
+/* BENEFÍCIOS */
+.beneficios {
+    background: #f4f4f4;
+}
+.beneficios .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+.beneficios .card h3 {
+    color: #244a96;
+    font-size: 20px;
+}
+/* HISTÓRIA */
+.historia {
+    background: #fff;
+}
+.historia p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+/* INTEGRANTES */
+.integrantes {
+    background: #f4f4f4;
+}
+.integrantes .grupo h3 {
+    color: #112a63;
+}
+.integrantes .integrantes-img-wrapper img {
+    border: 8px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+/* CTA */
+.cta {
+    background: #f4f4f4; /* Fundo cinza claro */
+    color: #244a96; /* Cor do texto principal azul */
+}
+.cta h2 {
+    color: #244a96;
+}
+.cta p {
+    color: #333; /* Cor do parágrafo */
+}
+.cta .btn-secondary {
+    background-color: #244a96; /* Botão de fundo azul */
+    border-color: #244a96;
+    color: #fff;
+}
+.cta .btn-secondary:hover {
+    background-color: #112a63;
+    border-color: #112a63;
+}
+.cta .btn-outline-light {
+    border-color: #244a96; /* Botão com borda azul */
+    color: #244a96;
+}
+.cta .btn-outline-light:hover {
+    background-color: #244a96;
+    color: #fff;
+}
+/* FOOTER */
+.footer {
+    background: #eee;
+}
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        text-align: center;
+    }
+    .navbar-nav {
+        margin: 10px 0;
+    }
+    .d-flex.flex-column.flex-lg-row {
+        flex-direction: row !important;
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav-link {
+        font-size: 18px; /* Ajuste da fonte para telas menores */
+    }
+}
+@media (max-width: 575.98px) {
+    h2 {
+        font-size: 2rem;
+    }
+    .navbar-brand img {
+        height: 50px;
+    }
+}
