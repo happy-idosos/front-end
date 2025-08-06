@@ -169,12 +169,12 @@ nav {
 }
 
 .tab-button:hover {
-    color: #0d6efd;
+    color: #244a96;
 }
 
 .tab-button.active {
-    color: #0d6efd;
-    border-bottom: 3px solid #0d6efd;
+    color: #244a96;
+    border-bottom: 3px solid #244a96;
 }
 
 .tab-content {
@@ -251,12 +251,12 @@ nav {
 
 .event-details li i {
     margin-right: 10px;
-    color: #0d6efd;
+    color: #244a96;
     font-size: 1.1em;
 }
 
 .btn-inscricao {
-    background-color: #0d6efd;
+    background-color: #244a96;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -271,14 +271,14 @@ nav {
 }
 
 .btn-inscricao:hover {
-    background-color: #0a58ca;
+    background-color: #244a96;
 }
 
 .ver-mais-eventos-btn {
     display: inline-block;
     background-color: transparent;
-    color: #0d6efd;
-    border: 2px solid #0d6efd;
+    color: #244a96;
+    border: 2px solid #244a96;
     padding: 10px 25px;
     border-radius: 5px;
     text-decoration: none;
@@ -288,7 +288,7 @@ nav {
 }
 
 .ver-mais-eventos-btn:hover {
-    background-color: #0d6efd;
+    background-color: #244a96;
     color: white;
 }
 

@@ -19,57 +19,142 @@ body {
 
 /* NAVBAR */
 .navbar {
-    background: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.navbar .container {
+    background: transparent;
+    border-bottom: 1px solid transparent;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
+    margin-left: 30px;
+  }
+  .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+  }
+  
+  .logo { /* align-items: center;   display: flex;*/
     font-size: 1.5rem;
     font-weight: bold;
     color: #244a96;
     text-decoration: none;
-}
-
-.logo img {
-    height: 60px;
-    margin-right: 5px;
-}
-
-/* Navegação */
-nav {
+    margin-left: 0;
+  }
+  
+  .logo img {
+    height: 95px;
+    width: auto;
+    max-height: 100%;
+  }
+  
+  .nav-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  nav {
     display: flex;
     align-items: center;
     gap: 25px;
     flex-wrap: wrap;
-}
-
-.nav-links {
+  }
+  
+  .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .nav-links a {
     text-decoration: none;
-    color: #000;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .nav-links a:hover {
+    color: white;
+    background-color: #244a96;
+  }
+  .menu-e-botoes {
+      display: flex;
+      align-items: center; /* Alinha links e botões verticalmente */
+      gap: 20px; /* Adiciona um espaçamento entre a lista de links e os botões */
+      margin-left: 22px;
+    }
+  .botao_especial {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    letter-spacing: 0.3px;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s;
+    margin: 4px;
+    overflow: hidden;
+    background: transparent;
+    white-space: nowrap;
+    border-radius: 6px;
+  }
+  
+  .botao_especial span {
+    position: relative;
+    z-index: 2;
+  }
+  .botao_especial::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #244a96;
+    transition: all 0.35s;
+    z-index: 1;
+  }
+  .botao_especial:hover {
+    color: #fff;
+  }
+  .botao_especial:hover::after {
+    width: 100%;
+  }
+  .btn-secondary,
+  .btn-outline {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
-    padding: 8px 10px;
-    transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-    color: #0d6efd;
-}
+  }
+  .btn-secondary {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+  }
+  .btn-outline {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+  }
+  .btn-secondary:hover {
+    background: white;
+    color: #244a96;
+    border: 2px solid white;
+  }
+  .btn-outline:hover {
+    background: white;
+    color: #244a96;
+    border: 2px solid white;
+  }
+  
 
 .btn-primary {
     background: #0d6efd;
@@ -232,7 +317,7 @@ nav {
 }
 
 .btn-inscricao {
-    background-color: #0d6efd;
+    background-color: #244a96;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -247,7 +332,7 @@ nav {
 }
 
 .btn-inscricao:hover {
-    background-color: #0a58ca;
+    background-color: #244a96;
 }
 
 .ver-mais-eventos-btn {
@@ -327,7 +412,7 @@ nav {
 }
 
 .btn-submit-evento {
-    background-color: #28a745;
+    background-color: #244a96;
     color: white;
     padding: 15px 25px;
     border: none;
@@ -341,7 +426,7 @@ nav {
 }
 
 .btn-submit-evento:hover {
-    background-color: #218838;
+    background-color: #244a96;
 }
 
 .footer {
@@ -364,3 +449,11 @@ nav {
         padding: 20px;
     }
 }
+.divisor {
+    border: none;
+    height: 3px;
+    background-color:rgba(36, 74, 150, 1); /* Azul Royal */
+    margin: 40px auto;
+    width: 70%; /* ou 100% se quiser ocupar toda a largura */
+    border-radius: 5 px;
+  }
