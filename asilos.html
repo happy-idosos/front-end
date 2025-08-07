@@ -4,73 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Idosos</title>
-    <link rel="stylesheet" href="css/style-buscarasilo.css" />
+    <!-- Links do Bootstrap e fontes -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Link para os estilos da navbar e comuns -->
+    <link rel="stylesheet" href="css/style-index.css" />
+    
+    <!-- Link para os estilos específicos da página de asilos -->
+    <link rel="stylesheet" href="css/style-asilos.css" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="img/happyidosos.png" alt="Logo Happy Idosos" />
-            </a>
-            <div class="menu-e-botoes">
-                <ul class="nav-links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="asilo.html">Buscar Asilos</a></li>
-                    <li><a href="eventos.html">Eventos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <a href="#" class="botao_especial"><span>Editar Perfil Voluntário</span></a>
-                    <a href="#" class="botao_especial"><span>Editar Perfil Asilo</span></a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <link rel="stylesheet" href="css/style-buscarasilo.css">
-
-<div class="page-wrapper">
-
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Encontre Asilos e Centros de Atividades</h1>
-        <p>Busque por instituições próximas a você e descubra como pode ajudar.</p>
-        <div class="search-bar">
-            <input type="text" placeholder="Digite o nome ou cidade da instituição" />
-            <button>Buscar</button>
-        </div>
-    </section>
-
-    <!-- LISTAGEM DE ASILOS -->
-    <section class="asilos-section">
-        <div class="container">
-            <div class="asilos-container" id="asilos-container">
-                <!-- Card de exemplo -->
-                <div class="asilo-card">
-                    <h3>Lar dos Idosos Felizes</h3>
-                    <p>Um espaço acolhedor para idosos com diversas atividades recreativas e culturais.</p>
-                    <p>📍 São Paulo, SP</p>
-                    <p>🎉 2 eventos próximos</p>
-                    <div class="btn-group">
-                        <button class="ver-detalhes">Ver Detalhes</button>
-                        <button class="ver-eventos">Ver Eventos</button>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/happyidosos.png" alt="Logo Happy Idosos" style="height: 100px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="asilos.html">Buscar Asilos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eventos.html">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="visualizarvideos.html">Vídeos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex flex-column flex-lg-row ms-lg-3 mt-3 mt-lg-0">
+                        <a href="#" class="btn btn-outline-primary me-lg-2 mb-2 mb-lg-0">Editar Perfil Voluntário</a>
+                        <a href="#" class="btn btn-primary">Editar Perfil Asilo</a>
                     </div>
                 </div>
-                <!-- Outros cards serão adicionados via JS/API futuramente -->
             </div>
+        </nav>
+    </header>
 
-            <!-- BOTÃO CARREGAR MAIS -->
-            <button class="btn-carregar">Carregar Mais</button>
+    <main>
+       <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-    </section>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/mulheres-trabalhando-juntas-no-campo (1).jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Conectando Voluntários e Idosos</h2>
+                    <p>Encontre os asilos mais próximos da sua casa.</p>
+                    <a href="eventos.html" class="btn btn-outline-light">Ver eventos</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/enfermeira-examinando-mulher-idosa-ao-ar-livre-em-uma-casa-de-repouso.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Conectando Voluntários e Idosos</h2>
+                    <p>Encontre os asilos mais próximos da sua casa.</p>
+                    <a href="eventos.html" class="btn btn-outline-light">Ver eventos</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/mulheres-trabalhando-juntas-no-campo.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Conectando Voluntários e Idosos</h2>
+                    <p>Encontre os asilos mais próximos da sua casa.</p>
+                    <a href="eventos.html" class="btn btn-outline-light">Ver eventos</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <hr class="divisor">
+                 
+        <section class="asilos-section">
+            <h2 class="text-center mb-4">Asilos mais próximos</h2>
+            <div class="container">
+                <div class="asilos-container">
 
-</div>
+                    <!-- Exemplo de Card de Asilo 1 -->
+                    <div class="asilo-card">
+                        <h3>Recanto da Felicidade</h3>
+                        <p><strong>Local:</strong> São Paulo, SP</p>
+                        <p><strong>Descrição:</strong> Um lar acolhedor que busca voluntários para atividades artísticas e de companhia. O sorriso dos nossos residentes é o nosso maior tesouro!</p>
+                        <p><strong>Precisamos de:</strong></p>
+                        <ul class="lista-atividades">
+                            <li><i class="fas fa-music"></i> Apresentação musical</li>
+                            <li><i class="fas fa-book-open"></i> Sessões de leitura</li>
+                            <li><i class="fas fa-comments"></i> Companhia para diálogos</li>
+                        </ul>
+                        <div class="btn-group">
+                            <button class="ver-detalhes">Ver Detalhes</button>
+                            <button class="ver-eventos">Voluntariar-se</button>
+                        </div>
+                    </div>
 
-    <footer class="footer">
+                    <!-- Exemplo de Card de Asilo 2 -->
+                    <div class="asilo-card">
+                        <h3>Casa de Repouso Sol Nascente</h3>
+                        <p><strong>Local:</strong> Rio de Janeiro, RJ</p>
+                        <p><strong>Descrição:</strong> Um ambiente tranquilo com vista para a natureza. Nossos idosos adoram jogos de tabuleiro e novas histórias.</p>
+                        <p><strong>Precisamos de:</strong></p>
+                        <ul class="lista-atividades">
+                            <li><i class="fas fa-theater-masks"></i> Organização de peças teatrais</li>
+                            <li><i class="fas fa-gamepad"></i> Tarde de jogos de tabuleiro</li>
+                            <li><i class="fas fa-hands-helping"></i> Auxílio em pequenas tarefas de jardinagem</li>
+                        </ul>
+                        <div class="btn-group">
+                            <button class="ver-detalhes">Ver Detalhes</button>
+                            <button class="ver-eventos">Voluntariar-se</button>
+                        </div>
+                    </div>
+
+                    <!-- Exemplo de Card de Asilo 3 -->
+                    <div class="asilo-card">
+                        <h3>Lar dos Avós</h3>
+                        <p><strong>Local:</strong> Belo Horizonte, MG</p>
+                        <p><strong>Descrição:</strong> Uma família que cresce a cada dia. Buscamos voluntários com talentos especiais e boa vontade para compartilhar.</p>
+                        <p><strong>Precisamos de:</strong></p>
+                        <ul class="lista-atividades">
+                            <li><i class="fas fa-camera"></i> Oficina de fotografia</li>
+                            <li><i class="fas fa-paint-brush"></i> Aula de pintura e artesanato</li>
+                            <li><i class="fas fa-utensils"></i> Ajuda em eventos de culinária</li>
+                        </ul>
+                        <div class="btn-group">
+                            <button class="ver-detalhes">Ver Detalhes</button>
+                            <button class="ver-eventos">Voluntariar-se</button>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn-carregar">Carregar Mais Asilos</button>
+            </div>
+        </section>
+
+        <!-- Nova seção de Destaque e Cadastro -->
+       <section class="cta-asilos text-center py-5">
+    <div class="container">
+        <h2>Seja a Mudança na Vida de Alguém!</h2>
+        <p class="lead mb-4">Se você é um jovem artista, um bom ouvinte ou simplesmente quer dedicar um tempo para sorrir com um idoso, cadastre-se agora.</p>
+        <div class="d-grid gap-2 d-md-block">
+            <a href="cadastro.html" class="btn btn-outline-light btn-lg">Cadastrar como Voluntário</a>
+            <a href="#" class="btn btn-outline-light btn-lg">Cadastrar seu Asilo</a>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="footer bg-dark text-white text-center py-3">
         <div class="container">
-            <p>Happy Idosos &copy; 2025. Todos os direitos reservados.</p>
+            <p class="mb-0">Happy Idosos &copy; 2025. Todos os direitos reservados.</p>
         </div>
     </footer>
-
 </body>
 </html>
