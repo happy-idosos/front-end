@@ -1,0 +1,215 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #244a96;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 5px;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a { 
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 8px 10px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #0d6efd;
+}
+
+.btn-primary {
+    background: #0d6efd;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.user button {
+    background-color: #1d3f9f;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.hero {
+    background-color: #1d3f9f;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+.main-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 50px auto;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.info {
+    flex: 1;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.info h2 {
+    font-size: 18px;
+    color: #1d3f9f;
+    margin-bottom: 10px;
+}
+
+.info p {
+    margin: 5px 0 15px 0;
+    font-size: 14px;
+}
+
+.info .item {
+    margin-bottom: 20px;
+}
+
+.info h3 {
+    font-size: 16px;
+    color: #1d3f9f;
+    margin-bottom: 5px;
+}
+
+.form {
+    flex: 1;
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.form h2 {
+    font-size: 18px;
+    color: #1d3f9f;
+    margin-bottom: 5px;
+}
+
+.form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+form button {
+    background-color: #1d3f9f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+form button:hover {
+    background-color: #163080;
+}
+
+footer {
+    background-color: white;
+    border-top: 1px solid #ddd;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #666;
+    font-size: 13px;
+}
+
+.logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-footer img {
+    width: 24px;
+}

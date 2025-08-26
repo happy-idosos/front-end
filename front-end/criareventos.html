@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Idosos</title>
+    <link rel="stylesheet" href="css/style-eventos.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+        <a href="index.php" class="logo">
+            <img src="img/happyidosos.png" alt="Logo Happy Idosos" />
+            Happy Idosos
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.php">Início</a></li>
+            <li><a href="buscarasilo.php">Buscar Asilos</a></li>
+            <li><a href="eventos.php">Eventos</a></li>
+            <li><a href="contato.php">Contato</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="editar_voluntario.php" class="btn-primary">Editar Perfil Voluntário</a>
+            <a href="editar_asilo.php" class="btn-primary">Editar Perfil Asilo</a>
+        </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h2>Eventos para voluntários e idosos</h2>
+                <p>Participe de eventos ou crie o seu próprio para promover a interação entre voluntários e idosos</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="manipular-eventos">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-button active" onclick="showTab('proximos-eventos')">Próximos Eventos</button>
+                <a href="criar-evento.php" class="tab-button">Criar Evento</a>
+            </div>
+
+            <div id="proximos-eventos" class="tab-content active">
+                <div class="cards">
+                    <!-- Evento 1 -->
+                    <div class="card event-card">
+                        <div class="card-icon">
+                            <img src="img/nota-musical.png" alt="Ícone Música">
+                        </div>
+                        <h3>Tarde Musical</h3>
+                        <p>Uma tarde de música ao vivo com apresentações de voluntários talentosos.</p>
+                        <ul class="event-details">
+                            <li><i class="fa-solid fa-calendar-days"></i> 15 de Maio, 2025</li>
+                            <li><i class="fa-regular fa-clock"></i> 14:00 - 16:00</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Lar dos Idosos Felizes</li>
+                        </ul>
+                        <a href="#" class="btn-inscricao">Inscrever-se</a>
+                    </div>
+
+                    <!-- Evento 2 -->
+                    <div class="card event-card">
+                        <div class="card-icon">
+                            <img src="img/pincel-grande.png" alt="Ícone Pintura">
+                        </div>
+                        <h3>Oficina de Pintura</h3>
+                        <p>Aprenda técnicas de pintura e crie sua própria obra de arte.</p>
+                        <ul class="event-details">
+                            <li><i class="fa-solid fa-calendar-days"></i> 22 de Maio, 2025</li>
+                            <li><i class="fa-regular fa-clock"></i> 10:00 - 12:00</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Centro de Convivência Viver Bem</li>
+                        </ul>
+                        <a href="#" class="btn-inscricao">Inscrever-se</a>
+                    </div>
+
+                    <!-- Evento 3 -->
+                    <div class="card event-card">
+                        <div class="card-icon">
+                            <img src="img/abra-o-livro.png" alt="Ícone Livro">
+                        </div>
+                        <h3>Clube do Livro</h3>
+                        <p>Discussão sobre o livro do mês com chá da tarde.</p>
+                        <ul class="event-details">
+                            <li><i class="fa-solid fa-calendar-days"></i> 29 de Maio, 2025</li>
+                            <li><i class="fa-regular fa-clock"></i> 15:00 - 17:00</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Residencial Terceira Idade</li>
+                        </ul>
+                        <a href="#" class="btn-inscricao">Inscrever-se</a>
+                    </div>
+
+                    <!-- Evento 4 -->
+                    <div class="card event-card">
+                        <div class="card-icon">
+                            <img src="img/pessoa.png" alt="Ícone Conversa">
+                        </div>
+                        <h3>Roda de Conversa</h3>
+                        <p>Compartilhe histórias e experiências em uma tarde de conversa.</p>
+                        <ul class="event-details">
+                            <li><i class="fa-solid fa-calendar-days"></i> 5 de Junho, 2025</li>
+                            <li><i class="fa-regular fa-clock"></i> 14:00 - 16:00</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Lar dos Idosos Felizes</li>
+                        </ul>
+                        <a href="#" class="btn-inscricao">Inscrever-se</a>
+                    </div>
+                </div>
+                <a href="#" class="ver-mais-eventos-btn">Ver Mais Eventos</a>
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <footer class="footer">
+        <div class="container">
+            <p>Happy Idosos &copy; 2025. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
