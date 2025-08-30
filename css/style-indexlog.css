@@ -1,0 +1,758 @@
+@charset "UTF-8";
+/* RESET E ESTILOS GERAIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  /* Removed padding-top since navbar is no longer fixed */
+}
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Enhanced transparent header styles */
+.transparent-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: all 0.4s ease;
+  border-bottom: 1px solid rgba(36, 74, 150, 0.1);
+  box-shadow: 0 2px 20px rgba(36, 74, 150, 0.05);
+}
+
+.transparent-header.scrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 4px 30px rgba(36, 74, 150, 0.15);
+  border-bottom: 1px solid rgba(36, 74, 150, 0.2);
+}
+
+/* Estilos para a Navbar */
+.navbar {
+  padding: 1rem 0;
+}
+.navbar-brand img {
+  height: 80px;
+  transition: all 0.3s ease;
+}
+.nav-link {
+  color: #333 !important;
+  font-weight: 600;
+  padding: 8px 15px !important;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-size: 16px;
+  position: relative;
+}
+
+/* Enhanced hover effects for nav links */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #244a96;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+  width: 80%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #244a96 !important;
+  background-color: rgba(36, 74, 150, 0.1);
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-item {
+  margin-right: 10px;
+}
+
+/* Enhanced button styles */
+.btn-outline-primary {
+  color: #244a96;
+  border-color: #244a96;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-outline-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-outline-primary:hover::before {
+  left: 100%;
+}
+
+.btn-outline-primary:hover {
+  background-color: #244a96;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(36, 74, 150, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #244a96, #1a3a7a);
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1a3a7a, #112a63);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(36, 74, 150, 0.4);
+}
+
+/* Estilos para o Carrossel */
+.carousel-inner img {
+  max-height: 900px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+.carousel-caption h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.carousel-caption p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.carousel-caption .btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  margin-top: 15px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.carousel-caption .btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+.carousel-caption .btn-secondary:hover {
+  background: white;
+  color: #244a96;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+.carousel-caption .btn-outline-light {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+.carousel-caption .btn-outline-light:hover {
+  background: white;
+  color: #244a96;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* SEÇÕES PADRÃO */
+.divisor {
+  border: none;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #244a96, transparent);
+  margin: 50px auto;
+  width: 70%;
+  border-radius: 5px;
+}
+h2 {
+  color: #244a96;
+  font-size: 2.5rem;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+}
+
+/* Added decorative underline to headings */
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #244a96, #1a3a7a);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.como-funciona,
+.beneficios,
+.historia,
+.integrantes,
+.cta {
+  padding: 80px 0;
+}
+
+/* Enhanced card styles with better shadows and hover effects */
+.como-funciona .card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.como-funciona .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #244a96, #1a3a7a);
+}
+
+.como-funciona .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(36, 74, 150, 0.2);
+}
+
+.como-funciona .card img {
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+.como-funciona .card:hover img {
+  transform: scale(1.1);
+}
+
+/* BENEFÍCIOS */
+.beneficios {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+.beneficios .card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.beneficios .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #244a96, #1a3a7a);
+}
+
+.beneficios .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(36, 74, 150, 0.15);
+}
+
+.beneficios .card h3 {
+  color: #244a96;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.beneficios .card li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.beneficios .card li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #244a96;
+  font-weight: bold;
+}
+
+/* HISTÓRIA */
+.historia {
+  background: white;
+}
+.historia p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.8;
+  font-size: 16px;
+  text-align: justify;
+}
+
+/* INTEGRANTES */
+.integrantes {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+.integrantes .card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.integrantes .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #244a96, #1a3a7a);
+}
+
+.integrantes .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(36, 74, 150, 0.15);
+}
+
+.integrantes .card h3 {
+  color: #244a96;
+  font-weight: 700;
+}
+
+.integrantes img {
+  border: 4px solid #244a96;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.integrantes img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(36, 74, 150, 0.3);
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, #244a96, #1a3a7a);
+  color: white;
+}
+.cta h2 {
+  color: white;
+}
+.cta h2::after {
+  background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.8));
+}
+.cta p {
+  color: rgba(255, 255, 255, 0.9);
+}
+.cta .btn-secondary {
+  background-color: white;
+  border-color: white;
+  color: #244a96;
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 12px 30px;
+  transition: all 0.3s ease;
+}
+.cta .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+.cta .btn-outline-light {
+  border-color: white;
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  padding: 12px 30px;
+  transition: all 0.3s ease;
+}
+.cta .btn-outline-light:hover {
+  background-color: white;
+  color: #244a96;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* New statistics section styles */
+.estatisticas {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+}
+
+.stat-card {
+  padding: 30px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(36, 74, 150, 0.1);
+  transition: all 0.3s ease;
+  border-top: 4px solid #244a96;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(36, 74, 150, 0.2);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #244a96;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 600;
+}
+
+/* Added location finder section styles */
+.localizacao {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.region-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  border-top: 4px solid #244a96;
+}
+
+.region-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(36, 74, 150, 0.15);
+}
+
+.region-card h4 {
+  color: #244a96;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.estados-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.estado-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.estado-link:hover {
+  background: #244a96;
+  color: white;
+  transform: translateX(5px);
+}
+
+.estado-link .badge {
+  background: #244a96;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.estado-link:hover .badge {
+  background: white;
+  color: #244a96;
+}
+
+/* Added services section styles */
+.servicos {
+  background: white;
+}
+
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #244a96;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(36, 74, 150, 0.15);
+}
+
+.service-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #244a96, #1a3a7a);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+}
+
+.service-icon img {
+  filter: brightness(0) invert(1);
+}
+
+.service-content h4 {
+  color: #244a96;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.service-content p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.service-link {
+  color: #244a96;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.service-link:hover {
+  color: #1a3a7a;
+  transform: translateX(5px);
+}
+
+/* FOOTER */
+.footer {
+  background: #1a1a1a;
+  color: white;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 991.98px) {
+  .transparent-header {
+    background: rgba(255, 255, 255, 0.98) !important;
+    position: relative;
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .navbar-brand img {
+    height: 70px;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 15px;
+    margin-top: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-nav {
+    margin: 15px 0;
+  }
+
+  .nav-item {
+    margin: 5px 0;
+  }
+
+  .d-flex.flex-column.flex-lg-row {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .d-flex.flex-column.flex-lg-row .btn {
+    width: 200px;
+    text-align: center;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 10px 20px !important;
+  }
+
+  .carousel-inner img {
+    max-height: 500px;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .service-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-icon {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  h2 {
+    font-size: 2rem;
+  }
+
+  .navbar-brand img {
+    height: 60px;
+  }
+
+  .navbar {
+    padding: 0.8rem 0;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+
+  .carousel-inner img {
+    max-height: 400px;
+  }
+
+  .como-funciona,
+  .beneficios,
+  .historia,
+  .integrantes,
+  .cta,
+  .estatisticas,
+  .localizacao,
+  .servicos {
+    padding: 50px 0;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .d-flex.flex-column.flex-lg-row .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .region-card {
+    padding: 20px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 375px) {
+  .navbar-brand img {
+    height: 50px;
+  }
+
+  .carousel-inner img {
+    max-height: 300px;
+  }
+
+  .carousel-caption {
+    padding-bottom: 1rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+
+  .carousel-caption .btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}

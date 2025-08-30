@@ -6,7 +6,7 @@
     <title>Happy Idosos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    <link rel="stylesheet" href="css/style-index.css" />
+    <link rel="stylesheet" href="css/style-indexlog.css" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Added AOS library for scroll animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -37,9 +37,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="visualizarvideos.html">Vídeos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contato.html">Contato</a>
@@ -102,7 +99,84 @@
     <hr class="divisor">
     
     <main>
+        <!-- Added new statistics section inspired by reference site -->
+        <section class="estatisticas py-5" data-aos="fade-up" data-aos-duration="800">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="stat-card">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Asilos Cadastrados</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-card">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Voluntários Ativos</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="stat-card">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Idosos Beneficiados</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="stat-card">
+                            <div class="stat-number">24</div>
+                            <div class="stat-label">Estados Atendidos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Added location finder section inspired by reference site -->
+        <section class="localizacao bg-light py-5" data-aos="fade-up" data-aos-duration="800">
+            <div class="container text-center">
+                <h2 class="mb-4">Encontre Asilos Próximos a Você</h2>
+                <p class="lead mb-5">Conectamos voluntários com asilos em todo o Brasil. Selecione seu estado e descubra oportunidades de voluntariado.</p>
+                
+                <div class="row">
+                    <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="region-card">
+                            <h4>Região Sudeste</h4>
+                            <div class="estados-grid">
+                                <a href="asilos.html?estado=sp" class="estado-link">São Paulo <span class="badge">45</span></a>
+                                <a href="asilos.html?estado=rj" class="estado-link">Rio de Janeiro <span class="badge">32</span></a>
+                                <a href="asilos.html?estado=mg" class="estado-link">Minas Gerais <span class="badge">28</span></a>
+                                <a href="asilos.html?estado=es" class="estado-link">Espírito Santo <span class="badge">12</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="region-card">
+                            <h4>Região Nordeste</h4>
+                            <div class="estados-grid">
+                                <a href="asilos.html?estado=ba" class="estado-link">Bahia <span class="badge">18</span></a>
+                                <a href="asilos.html?estado=pe" class="estado-link">Pernambuco <span class="badge">15</span></a>
+                                <a href="asilos.html?estado=ce" class="estado-link">Ceará <span class="badge">12</span></a>
+                                <a href="asilos.html?estado=pb" class="estado-link">Paraíba <span class="badge">8</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="region-card">
+                            <h4>Região Sul</h4>
+                            <div class="estados-grid">
+                                <a href="asilos.html?estado=rs" class="estado-link">Rio Grande do Sul <span class="badge">22</span></a>
+                                <a href="asilos.html?estado=pr" class="estado-link">Paraná <span class="badge">19</span></a>
+                                <a href="asilos.html?estado=sc" class="estado-link">Santa Catarina <span class="badge">16</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="asilos.html" class="btn btn-primary btn-lg">Ver Todos os Asilos</a>
+                </div>
+            </div>
+        </section>
 
         <!-- Added new services section -->
         <section class="servicos py-5" data-aos="fade-up" data-aos-duration="800">
@@ -229,55 +303,7 @@
                 </div>
             </div>
         </section>
-
         
-        <!-- Added location finder section inspired by reference site -->
-        <section class="localizacao bg-light py-5" data-aos="fade-up" data-aos-duration="800">
-            <div class="container text-center">
-                <h2 class="mb-4">Encontre Asilos Próximos a Você</h2>
-                <p class="lead mb-5">Conectamos voluntários com asilos em todo o Brasil. Selecione seu estado e descubra oportunidades de voluntariado.</p>
-                
-                <div class="row">
-                    <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="100">
-                        <div class="region-card">
-                            <h4>Região Sudeste</h4>
-                            <div class="estados-grid">
-                                <a href="asilos.html?estado=sp" class="estado-link">São Paulo <span class="badge">45</span></a>
-                                <a href="asilos.html?estado=rj" class="estado-link">Rio de Janeiro <span class="badge">32</span></a>
-                                <a href="asilos.html?estado=mg" class="estado-link">Minas Gerais <span class="badge">28</span></a>
-                                <a href="asilos.html?estado=es" class="estado-link">Espírito Santo <span class="badge">12</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="200">
-                        <div class="region-card">
-                            <h4>Região Nordeste</h4>
-                            <div class="estados-grid">
-                                <a href="asilos.html?estado=ba" class="estado-link">Bahia <span class="badge">18</span></a>
-                                <a href="asilos.html?estado=pe" class="estado-link">Pernambuco <span class="badge">15</span></a>
-                                <a href="asilos.html?estado=ce" class="estado-link">Ceará <span class="badge">12</span></a>
-                                <a href="asilos.html?estado=pb" class="estado-link">Paraíba <span class="badge">8</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="region-card">
-                            <h4>Região Sul</h4>
-                            <div class="estados-grid">
-                                <a href="asilos.html?estado=rs" class="estado-link">Rio Grande do Sul <span class="badge">22</span></a>
-                                <a href="asilos.html?estado=pr" class="estado-link">Paraná <span class="badge">19</span></a>
-                                <a href="asilos.html?estado=sc" class="estado-link">Santa Catarina <span class="badge">16</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-4">
-                    <a href="asilos.html" class="btn btn-primary btn-lg">Ver Todos os Asilos</a>
-                </div>
-            </div>
-        </section>
-
         <section class="historia bg-light py-5" data-aos="fade-up" data-aos-duration="800">
             <div class="container">
                 <h2 class="text-center mb-4">História do Projeto</h2>
@@ -303,7 +329,7 @@
                                 <li>Evellyn Soares Ferreira</li>
                                 <li>Giovanna Queiroz Carvalho</li>
                                 <li>Heloisa Emanuele Gonçalves Godinho</li>
-                                <li>Heloysa Beatriz Santos</li>
+                                <li>Heloysa Beatriz dos Santos</li>
                             </ul>
                         </div>
                     </div>
