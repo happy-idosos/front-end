@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos - Happy Idosos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-videos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Navbar idêntica ao index.html original -->
+        <nav class="navbar navbar-expand-lg transparent-header" id="mainNavbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="img/happyidosos.png" alt="Logo Happy Idosos" style="height: 80px;" >
+                </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="asilos.html">Buscar Asilos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="eventos.html">Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="videos.html">Vídeos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                     <div class="d-flex flex-column flex-lg-row ms-lg-3 mt-3 mt-lg-0 gap-2">
+                        <a href="cadastrovoluntario.html" class="btn btn-outline-primary">Fazer Parte - Voluntário</a>
+                        <a href="loginvoluntario.html" class="btn btn-primary">Já é Cadastrado? - Faça Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Substituindo hero section por carousel idêntico ao index.html -->
+    <div id="carouselExampleCaptions" class="carousel slide hero-carousel" data-bs-ride="carousel" data-aos="fade-up" data-aos-duration="1200">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/mulheres-trabalhando-juntas-no-campo (1).jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Galeria de Vídeos da Comunidade</h2>
+                    <p>Compartilhe momentos especiais e inspire outras pessoas através dos vídeos da nossa comunidade de idosos</p>
+                    <a href="#videos-grid" class="btn btn-secondary">Ver Vídeos</a>
+                    <a href="#upload-section" class="btn btn-outline-light">Enviar Vídeo</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/enfermeira-examinando-mulher-idosa-ao-ar-livre-em-uma-casa-de-repouso.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Momentos Inesquecíveis</h2>
+                    <p>Registre e compartilhe as atividades, eventos e depoimentos que fazem a diferença na vida dos idosos</p>
+                    <a href="#videos-grid" class="btn btn-secondary">Ver Vídeos</a>
+                    <a href="#upload-section" class="btn btn-outline-light">Enviar Vídeo</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/mulheres-trabalhando-juntas-no-campo.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Conectando Gerações</h2>
+                    <p>Através dos vídeos, criamos pontes entre diferentes gerações e compartilhamos experiências valiosas</p>
+                    <a href="#videos-grid" class="btn btn-secondary">Ver Vídeos</a>
+                    <a href="#upload-section" class="btn btn-outline-light">Enviar Vídeo</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <hr class="divisor">
+    
+    <main>
+        <!-- Adicionando seção de upload de vídeos dentro do conteúdo principal -->
+        <section class="upload-section py-5" id="upload-section" data-aos="fade-up" data-aos-duration="800">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mb-4">Compartilhe Seus Vídeos</h2>
+                        <p class="lead mb-4">Faça parte da nossa comunidade e compartilhe momentos especiais, atividades, eventos e depoimentos que inspiram e emocionam.</p>
+                        
+                        <!-- Upload form for authenticated users -->
+                        <div class="upload-card p-4 rounded-4 shadow-lg bg-white">
+                            <div class="upload-area border-2 border-dashed rounded-3 p-5 mb-4" id="uploadArea">
+                                <i class="fas fa-cloud-upload-alt fa-3x text-primary mb-3"></i>
+                                <h4>Arraste seu vídeo aqui ou clique para selecionar</h4>
+                                <p class="text-muted">Formatos aceitos: MP4, AVI, MOV (máx. 100MB)</p>
+                                <input type="file" id="videoFile" accept="video/*" class="d-none">
+                                <button class="btn btn-primary btn-lg" onclick="document.getElementById('videoFile').click()">
+                                    <i class="fas fa-plus me-2"></i>Selecionar Vídeo
+                                </button>
+                            </div>
+                            
+                            <!-- Video details form -->
+                            <form id="uploadForm" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="videoTitle" class="form-label">Título do Vídeo</label>
+                                        <input type="text" class="form-control" id="videoTitle" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="videoCategory" class="form-label">Categoria</label>
+                                        <select class="form-select" id="videoCategory" required>
+                                            <option value="">Selecione uma categoria</option>
+                                            <option value="atividades">Atividades</option>
+                                            <option value="eventos">Eventos</option>
+                                            <option value="depoimentos">Depoimentos</option>
+                                            <option value="tutoriais">Tutoriais</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="videoDescription" class="form-label">Descrição</label>
+                                    <textarea class="form-control" id="videoDescription" rows="3" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="videoTags" class="form-label">Tags (separadas por vírgula)</label>
+                                    <input type="text" class="form-control" id="videoTags" placeholder="idosos, atividade, alegria">
+                                </div>
+                                <div class="d-flex gap-3 justify-content-center">
+                                    <button type="submit" class="btn btn-success btn-lg">
+                                        <i class="fas fa-upload me-2"></i>Enviar Vídeo
+                                    </button>
+                                    <button type="button" class="btn btn-secondary btn-lg" onclick="cancelUpload()">
+                                        <i class="fas fa-times me-2"></i>Cancelar
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            <!-- Upload progress -->
+                            <div id="uploadProgress" style="display: none;">
+                                <div class="progress mb-3">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                <p class="text-center">Enviando vídeo... <span id="progressText">0%</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divisor">
+
+        <!-- Seção de Filtros -->
+        <section class="filtros py-4" data-aos="fade-up" data-aos-duration="800">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="filter-buttons">
+                            <button class="btn btn-filter active" data-category="todos">Todos</button>
+                            <button class="btn btn-filter" data-category="atividades">Atividades</button>
+                            <button class="btn btn-filter" data-category="eventos">Eventos</button>
+                            <button class="btn btn-filter" data-category="depoimentos">Depoimentos</button>
+                            <button class="btn btn-filter" data-category="tutoriais">Tutoriais</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search-box">
+                            <input type="text" class="form-control" placeholder="Buscar vídeos..." id="searchInput">
+                            <i class="fas fa-search search-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid de Vídeos -->
+        <section class="videos-section py-5" id="videos-grid" data-aos="fade-up" data-aos-duration="800">
+            <div class="container">
+                <div class="row" id="videosContainer">
+                    <!-- Vídeos serão carregados dinamicamente via API -->
+                </div>
+
+                <!-- Loading indicator -->
+                <div class="text-center mt-4" id="loadingIndicator" style="display: none;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Carregando...</span>
+                    </div>
+                </div>
+
+                <!-- Load more button -->
+                <div class="text-center mt-4">
+                    <button class="btn btn-outline-primary btn-lg" id="loadMoreBtn">
+                        Carregar Mais Vídeos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divisor">
+
+        <!-- Seção de estatísticas dos vídeos -->
+        <section class="estatisticas py-5" data-aos="fade-up" data-aos-duration="800">
+            <div class="container">
+                <h2 class="text-center mb-5">Estatísticas da Comunidade</h2>
+                <div class="row text-center">
+                    <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalVideos">150+</div>
+                            <div class="stat-label">Vídeos Compartilhados</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalViews">25k+</div>
+                            <div class="stat-label">Visualizações</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalLikes">3.2k+</div>
+                            <div class="stat-label">Curtidas</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="stat-card">
+                            <div class="stat-number" id="activeUsers">80+</div>
+                            <div class="stat-label">Usuários Ativos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divisor">
+
+        <!-- CTA Section -->
+        <section class="cta text-center py-5" data-aos="fade-up" data-aos-duration="800">
+            <div class="container">
+                <h2>Compartilhe Seus Momentos</h2>
+                <p class="lead mb-4">Faça parte da nossa comunidade e compartilhe vídeos que inspiram e emocionam.</p>
+                <div class="d-grid gap-2 d-md-block" data-aos="zoom-in" data-aos-delay="200">
+                    <button class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#uploadModal">Enviar Vídeo</button>
+                    <a href="cadastrovoluntario.html" class="btn btn-outline-light btn-lg">Tornar-se Voluntário</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Upload de Vídeo -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalLabel">Enviar Novo Vídeo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="videoFile" class="form-label">Selecionar Vídeo</label>
+                            <input type="file" class="form-control" id="videoFile" accept="video/*" required>
+                            <div class="form-text">Formatos aceitos: MP4, AVI, MOV. Tamanho máximo: 100MB</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="videoTitle" class="form-label">Título do Vídeo</label>
+                            <input type="text" class="form-control" id="videoTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="videoDescription" class="form-label">Descrição</label>
+                            <textarea class="form-control" id="videoDescription" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="videoCategory" class="form-label">Categoria</label>
+                            <select class="form-select" id="videoCategory" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="atividades">Atividades</option>
+                                <option value="eventos">Eventos</option>
+                                <option value="depoimentos">Depoimentos</option>
+                                <option value="tutoriais">Tutoriais</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="videoThumbnail" class="form-label">Thumbnail (Opcional)</label>
+                            <input type="file" class="form-control" id="videoThumbnail" accept="image/*">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="uploadBtn">
+                        <span class="upload-text">Enviar Vídeo</span>
+                        <span class="upload-loading" style="display: none;">
+                            <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                            Enviando...
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal do Player de Vídeo -->
+    <div class="modal fade" id="videoPlayerModal" tabindex="-1" aria-labelledby="videoPlayerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoPlayerModalLabel">Reproduzir Vídeo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="video-player-container">
+                        <video id="videoPlayer" class="w-100" controls>
+                            <source src="/placeholder.svg" type="video/mp4">
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video>
+                    </div>
+                    <div class="video-details p-4">
+                        <h4 id="playerVideoTitle"></h4>
+                        <p id="playerVideoDescription"></p>
+                        <div class="video-actions mt-3">
+                            <button class="btn btn-outline-primary btn-sm me-2">
+                                <i class="fas fa-heart"></i> Curtir
+                            </button>
+                            <button class="btn btn-outline-secondary btn-sm">
+                                <i class="fas fa-share"></i> Compartilhar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer idêntico ao index.html original -->
+    <footer class="footer bg-dark text-white text-center py-3" data-aos="fade-up">
+        <div class="container">
+            <p class="mb-0">Happy Idosos &copy; 2025. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const API_CONFIG = {
+            BASE_URL: process.env.NODE_ENV === 'production' 
+                ? "https://api.happyidosos.com.br" 
+                : "http://localhost:3001",
+            ENDPOINTS: {
+                videos: "/api/videos",
+                upload: "/api/videos/upload",
+                categories: "/api/categories",
+                stats: "/api/stats"
+            },
+            AUTH_TOKEN_KEY: "happyidosos_auth_token"
+        }
+
+        // Global variables
+        let currentPage = 1
+        let currentCategory = "todos"
+        let currentSearch = ""
+        let isLoading = false
+
+        // DOM Elements
+        const videosContainer = document.getElementById("videosContainer")
+        const loadMoreBtn = document.getElementById("loadMoreBtn")
+        const loadingIndicator = document.getElementById("loadingIndicator")
+        const searchInput = document.getElementById("searchInput")
+        const filterButtons = document.querySelectorAll(".btn-filter")
+        const uploadForm = document.getElementById("uploadForm")
+        const uploadBtn = document.getElementById("uploadBtn")
+        let videoPlayerModal, uploadModal
+
+        // Initialize the application
+        document.addEventListener("DOMContentLoaded", () => {
+          videoPlayerModal = new window.bootstrap.Modal(document.getElementById("videoPlayerModal"))
+          uploadModal = new window.bootstrap.Modal(document.getElementById("uploadModal"))
+          initializeEventListeners()
+          loadVideos()
+          loadStats()
+        })
+
+        // Event Listeners
+        function initializeEventListeners() {
+          // Filter buttons
+          filterButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+              const category = this.dataset.category
+              setActiveFilter(this)
+              filterVideos(category)
+            })
+          })
+
+          // Search input
+          let searchTimeout
+          searchInput.addEventListener("input", function () {
+            clearTimeout(searchTimeout)
+            searchTimeout = setTimeout(() => {
+              searchVideos(this.value)
+            }, 500)
+          })
+
+          // Load more button
+          loadMoreBtn.addEventListener("click", loadMoreVideos)
+
+          // Upload form
+          uploadBtn.addEventListener("click", handleVideoUpload)
+
+          // Video cards click events (delegated)
+          videosContainer.addEventListener("click", (e) => {
+            const videoCard = e.target.closest(".video-card")
+            if (videoCard) {
+              const videoData = getVideoDataFromCard(videoCard)
+              openVideoPlayer(videoData)
+            }
+          })
+
+          // File input validation
+          document.getElementById("videoFile").addEventListener("change", validateVideoFile)
+        }
+
+        async function fetchVideos(page = 1, category = "todos", search = "") {
+          try {
+            const params = new URLSearchParams({
+              page: page,
+              limit: 6,
+              category: category !== "todos" ? category : "",
+              search: search,
+            })
+
+            const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.videos}?${params}`, {
+              headers: {
+                'Authorization': `Bearer ${getAuthToken()}`,
+                'Content-Type': 'application/json'
+              }
+            })
+
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`)
+            }
+
+            return await response.json()
+          } catch (error) {
+            console.error("Erro na API:", error)
+            // Retorna dados mockados em caso de erro
+            return getMockVideos(page, category, search)
+          }
+        }
+
+        async function uploadVideo(formData) {
+          try {
+            const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.upload}`, {
+              method: "POST",
+              body: formData,
+              headers: {
+                Authorization: `Bearer ${getAuthToken()}`,
+              },
+            })
+
+            if (!response.ok) {
+              const errorData = await response.json()
+              throw new Error(errorData.message || "Erro ao fazer upload do vídeo")
+            }
+
+            return await response.json()
+          } catch (error) {
+            console.error("Erro no upload:", error)
+            throw error
+          }
+        }
+
+        async function loadStats() {
+          try {
+            const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.stats}`)
+            if (response.ok) {
+              const stats = await response.json()
+              updateStatsDisplay(stats)
+            }
+          } catch (error) {
+            console.error("Erro ao carregar estatísticas:", error)
+          }
+        }
+
+        function updateStatsDisplay(stats) {
+          document.getElementById("totalVideos").textContent = formatNumber(stats.totalVideos) + "+"
+          document.getElementById("totalViews").textContent = formatNumber(stats.totalViews) + "+"
+          document.getElementById("totalLikes").textContent = formatNumber(stats.totalLikes) + "+"
+          document.getElementById("activeUsers").textContent = formatNumber(stats.activeUsers) + "+"
+        }
+
+        // Video Loading Functions
+        async function loadVideos(reset = true) {
+          if (isLoading) return
+
+          isLoading = true
+          showLoading()
+
+          try {
+            const data = await fetchVideos(reset ? 1 : currentPage, currentCategory, currentSearch)
+
+            if (reset) {
+              videosContainer.innerHTML = ""
+              currentPage = 1
+            }
+
+            renderVideos(data.videos)
+            updateLoadMoreButton(data.hasMore)
+
+            if (!reset) {
+              currentPage++
+            }
+          } catch (error) {
+            showError("Erro ao carregar vídeos. Tente novamente.")
+          } finally {
+            isLoading = false
+            hideLoading()
+          }
+        }
+
+        async function loadMoreVideos() {
+          currentPage++
+          await loadVideos(false)
+        }
+
+        function filterVideos(category) {
+          currentCategory = category
+          currentPage = 1
+          loadVideos(true)
+        }
+
+        function searchVideos(query) {
+          currentSearch = query
+          currentPage = 1
+          loadVideos(true)
+        }
+
+        // Rendering Functions
+        function renderVideos(videos) {
+          videos.forEach((video, index) => {
+            const videoElement = createVideoCard(video)
+            videoElement.setAttribute("data-aos", "zoom-in")
+            videoElement.setAttribute("data-aos-delay", (index * 100).toString())
+            videosContainer.appendChild(videoElement)
+          })
+
+          // Reinitialize AOS for new elements
+          if (typeof window.AOS !== "undefined") {
+            window.AOS.refresh()
+          }
+        }
+
+        function createVideoCard(video) {
+          const col = document.createElement("div")
+          col.className = "col-lg-4 col-md-6 mb-4 video-item"
+          col.dataset.category = video.category
+
+          col.innerHTML = `
+                <div class="video-card" data-video-id="${video.id}">
+                    <div class="video-thumbnail">
+                        <img src="${video.thumbnail || "/placeholder.svg?height=200&width=350&query=" + encodeURIComponent("Idosos " + video.title)}" 
+                             alt="${video.title}" class="img-fluid">
+                        <div class="play-overlay">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="video-duration">${formatDuration(video.duration)}</span>
+                    </div>
+                    <div class="video-info">
+                        <h5 class="video-title">${video.title}</h5>
+                        <p class="video-description">${video.description}</p>
+                        <div class="video-meta">
+                            <span class="video-author">Por: ${video.author}</span>
+                            <span class="video-date">${formatDate(video.createdAt)}</span>
+                        </div>
+                        <div class="video-stats">
+                            <span><i class="fas fa-eye"></i> ${formatNumber(video.views)} visualizações</span>
+                            <span><i class="fas fa-heart"></i> ${formatNumber(video.likes)} curtidas</span>
+                        </div>
+                    </div>
+                </div>
+            `
+
+          return col
+        }
+
+        // Video Player Functions
+        function openVideoPlayer(videoData) {
+          const modal = document.getElementById("videoPlayerModal")
+          const player = document.getElementById("videoPlayer")
+          const title = document.getElementById("playerVideoTitle")
+          const description = document.getElementById("playerVideoDescription")
+
+          // Set video source
+          player.src = videoData.videoUrl
+          title.textContent = videoData.title
+          description.textContent = videoData.description
+
+          // Show modal
+          videoPlayerModal.show()
+
+          // Track view
+          trackVideoView(videoData.id)
+        }
+
+        function getVideoDataFromCard(card) {
+          const videoId = card.dataset.videoId
+          const title = card.querySelector(".video-title").textContent
+          const description = card.querySelector(".video-description").textContent
+
+          // Em produção, buscar URL real da API
+          const url = `${API_CONFIG.BASE_URL}/videos/${videoId}.mp4`
+
+          return {
+            id: videoId,
+            title: title,
+            description: description,
+            videoUrl: url,
+          }
+        }
+
+        // Upload Functions
+        async function handleVideoUpload() {
+          const form = document.getElementById("uploadForm")
+          const formData = new FormData()
+
+          // Validate form
+          if (!form.checkValidity()) {
+            form.reportValidity()
+            return
+          }
+
+          // Check if user is logged in
+          if (!isUserLoggedIn()) {
+            showError("Você precisa estar logado para enviar vídeos.")
+            return
+          }
+
+          // Prepare form data
+          formData.append("video", document.getElementById("videoFile").files[0])
+          formData.append("title", document.getElementById("videoTitle").value)
+          formData.append("description", document.getElementById("videoDescription").value)
+          formData.append("category", document.getElementById("videoCategory").value)
+
+          const thumbnailFile = document.getElementById("videoThumbnail").files[0]
+          if (thumbnailFile) {
+            formData.append("thumbnail", thumbnailFile)
+          }
+
+          // Show loading state
+          setUploadLoading(true)
+
+          try {
+            const result = await uploadVideo(formData)
+            showSuccess("Vídeo enviado com sucesso! Aguarde a aprovação.")
+            uploadModal.hide()
+            form.reset()
+
+            // Reload videos to show new upload (if approved immediately)
+            loadVideos(true)
+          } catch (error) {
+            showError(error.message || "Erro ao enviar vídeo. Tente novamente.")
+          } finally {
+            setUploadLoading(false)
+          }
+        }
+
+        function validateVideoFile() {
+          const fileInput = document.getElementById("videoFile")
+          const file = fileInput.files[0]
+
+          if (!file) return
+
+          // Check file size (100MB limit)
+          const maxSize = 100 * 1024 * 1024 // 100MB in bytes
+          if (file.size > maxSize) {
+            showError("O arquivo é muito grande. Tamanho máximo: 100MB")
+            fileInput.value = ""
+            return
+          }
+
+          // Check file type
+          const allowedTypes = ["video/mp4", "video/avi", "video/mov", "video/quicktime"]
+          if (!allowedTypes.includes(file.type)) {
+            showError("Formato de arquivo não suportado. Use MP4, AVI ou MOV.")
+            fileInput.value = ""
+            return
+          }
+        }
+
+        // Utility Functions
+        function setActiveFilter(activeButton) {
+          filterButtons.forEach((btn) => btn.classList.remove("active"))
+          activeButton.classList.add("active")
+        }
+
+        function showLoading() {
+          loadingIndicator.style.display = "block"
+          loadMoreBtn.style.display = "none"
+        }
+
+        function hideLoading() {
+          loadingIndicator.style.display = "none"
+        }
+
+        function updateLoadMoreButton(hasMore) {
+          loadMoreBtn.style.display = hasMore ? "block" : "none"
+        }
+
+        function setUploadLoading(loading) {
+          const uploadText = document.querySelector(".upload-text")
+          const uploadLoading = document.querySelector(".upload-loading")
+
+          if (loading) {
+            uploadText.style.display = "none"
+            uploadLoading.style.display = "inline-block"
+            uploadBtn.disabled = true
+          } else {
+            uploadText.style.display = "inline-block"
+            uploadLoading.style.display = "none"
+            uploadBtn.disabled = false
+          }
+        }
+
+        function formatDuration(seconds) {
+          const minutes = Math.floor(seconds / 60)
+          const remainingSeconds = seconds % 60
+          return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`
+        }
+
+        function formatDate(dateString) {
+          const date = new Date(dateString)
+          return date.toLocaleDateString("pt-BR")
+        }
+
+        function formatNumber(num) {
+          if (num >= 1000000) {
+            return (num / 1000000).toFixed(1) + "M"
+          } else if (num >= 1000) {
+            return (num / 1000).toFixed(1) + "k"
+          }
+          return num.toString()
+        }
+
+        function showError(message) {
+          const toast = document.createElement('div')
+          toast.className = 'toast align-items-center text-white bg-danger border-0'
+          toast.innerHTML = `
+            <div class="d-flex">
+              <div class="toast-body">${message}</div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+          `
+          document.body.appendChild(toast)
+          const bsToast = new bootstrap.Toast(toast)
+          bsToast.show()
+          setTimeout(() => toast.remove(), 5000)
+        }
+
+        function showSuccess(message) {
+          const toast = document.createElement('div')
+          toast.className = 'toast align-items-center text-white bg-success border-0'
+          toast.innerHTML = `
+            <div class="d-flex">
+              <div class="toast-body">${message}</div>
+              <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+          `
+          document.body.appendChild(toast)
+          const bsToast = new bootstrap.Toast(toast)
+          bsToast.show()
+          setTimeout(() => toast.remove(), 5000)
+        }
+
+        function isUserLoggedIn() {
+          return localStorage.getItem(API_CONFIG.AUTH_TOKEN_KEY) !== null
+        }
+
+        function getAuthToken() {
+          return localStorage.getItem(API_CONFIG.AUTH_TOKEN_KEY)
+        }
+
+        function trackVideoView(videoId) {
+          fetch(`${API_CONFIG.BASE_URL}/api/videos/${videoId}/view`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${getAuthToken()}`,
+              'Content-Type': 'application/json'
+            }
+          }).catch(error => console.error('Erro ao rastrear visualização:', error))
+        }
+
+        function getMockVideos(page, category, search) {
+          const mockVideos = [
+            {
+              id: "1",
+              title: "Atividades Recreativas no Asilo São José",
+              description: "Momentos especiais durante as atividades de pintura e música com os residentes.",
+              category: "atividades",
+              author: "Maria Silva",
+              authorId: "user_001",
+              createdAt: "2025-01-15T10:00:00Z",
+              updatedAt: "2025-01-15T10:00:00Z",
+              duration: 225, // 3:45
+              views: 1200,
+              likes: 89,
+              comments: 12,
+              thumbnail: "/placeholder.svg?height=200&width=350",
+              videoUrl: "/api/videos/1.mp4",
+              status: "approved",
+              tags: ["pintura", "música", "recreação", "asilo"],
+              location: "Asilo São José",
+              participants: ["Dona Maria", "Seu João", "Dona Carmen"]
+            },
+            {
+              id: "2",
+              title: "Festa de Aniversário - 90 Anos da Dona Rosa",
+              description: "Celebração especial dos 90 anos da querida Dona Rosa com toda a família do lar.",
+              category: "eventos",
+              author: "João Santos",
+              authorId: "user_002",
+              createdAt: "2025-01-12T14:30:00Z",
+              updatedAt: "2025-01-12T14:30:00Z",
+              duration: 312, // 5:12
+              views: 856,
+              likes: 124,
+              comments: 18,
+              thumbnail: "/placeholder.svg?height=200&width=350",
+              videoUrl: "/api/videos/2.mp4",
+              status: "approved",
+              tags: ["aniversário", "festa", "90 anos", "celebração"],
+              location: "Lar Dona Rosa",
+              participants: ["Dona Rosa", "Família", "Residentes"]
+            },
+            {
+              id: "3",
+              title: "Depoimento: A Importância do Voluntariado",
+              description: "Seu Antônio conta como o trabalho voluntário transformou sua vida no lar.",
+              category: "depoimentos",
+              author: "Ana Costa",
+              authorId: "user_003",
+              createdAt: "2025-01-10T16:00:00Z",
+              updatedAt: "2025-01-10T16:00:00Z",
+              duration: 150, // 2:30
+              views: 2100,
+              likes: 203,
+              comments: 25,
+              thumbnail: "/placeholder.svg?height=200&width=350",
+              videoUrl: "/api/videos/3.mp4",
+              status: "approved",
+              tags: ["depoimento", "voluntariado", "transformação", "vida"],
+              location: "Casa de Repouso Esperança",
+              participants: ["Seu Antônio"]
+            },
+            {
+              id: "4",
+              title: "Exercícios Simples para Idosos",
+              description: "Tutorial com exercícios leves e seguros para manter a saúde e mobilidade.",
+              category: "tutoriais",
+              author: "Dr. Carlos Lima",
+              authorId: "user_004",
+              createdAt: "2025-01-08T09:30:00Z",
+              updatedAt: "2025-01-08T09:30:00Z",
+              duration: 495, // 8:15
+              views: 3400,
+              likes: 287,
+              comments: 34,
+              thumbnail: "/placeholder.svg?height=200&width=350",
+              videoUrl: "/api/videos/4.mp4",
+              status: "approved",
+              tags: ["exercícios", "saúde", "mobilidade", "tutorial"],
+              location: "Centro de Fisioterapia",
+              participants: ["Dr. Carlos", "Grupo de Idosos"]
+            },
+            {
+              id: "5",
+              title: "Oficina de Culinária - Receitas da Vovó",
+              description: "Os residentes compartilham suas receitas tradicionais em uma oficina especial.",
+              category: "atividades",
+              author: "Lucia Ferreira",
+              authorId: "user_005",
+              createdAt: "2025-01-05T11:15:00Z",
+              updatedAt: "2025-01-05T11:15:00Z",
+              duration: 382, // 6:22
+              views: 1800,
+              likes: 156,
+              comments: 21,
+              thumbnail: "/placeholder.svg?height=200&width=350",
+              videoUrl: "/api/videos/5.mp4",
+              status: "approved",
+              tags: ["culinária", "receitas", "tradição", "oficina"],
+              location: "Cozinha Comunitária",
+              participants: ["Dona Lucia", "Seu Pedro", "Dona Isabel"]
+            },
+            {
+              id: "6",
+              title: "Celebração de Natal 2024",
+              description: "Momentos emocionantes da festa de Natal com apresentações e confraternização.",
+              category: "eventos",
+              author: "Pedro Oliveira",
+              authorId: "user_006",
+              createdAt: "2024-12-25T19:00:00Z",
+              updatedAt: "2024-12-25T19:00:00Z",
+              duration: 295, // 4:55
+              views: 4200,
+              likes: 398,
+              comments: 45,
+              thumbnail: "/placeholder.svg?height=200&width=350",
+              videoUrl: "/api/videos/6.mp4",
+              status: "approved",
+              tags: ["natal", "festa", "celebração", "2024"],
+              location: "Salão Principal",
+              participants: ["Todos os Residentes", "Voluntários", "Familiares"]
+            },
+            {
+              id: "7",
+              title: "Terapia com Animais - Visita dos Cãezinhos",
+              description: "Momentos de alegria e terapia com a visita especial dos cães terapeutas.",
+              category: "atividades",
+              author: "Carla Mendes",
+              authorId: "user_007",
+              createdAt: "2025-01-03T15:45:00Z",
+              updatedAt: "2025-01-03T15:45:00Z",
+              duration: 180, // 3:00
+              views: 2800,
+              likes: 245,
+              comments: 28,
+              thumbnail: "/placeholder.svg?height=200&width=350",
+              videoUrl: "/api/videos/7.mp4",
+              status: "approved",
+              tags: ["terapia", "animais", "cães", "alegria"],
+              location: "Jardim Terapêutico",
+              participants: ["Residentes", "Cães Terapeutas", "Veterinária"]
+            },
+            {
+              id: "8",
+              title: "Aula de Dança de Salão Adaptada",
+              description: "Aula especial de dança adaptada para a terceira idade com muito ritmo e diversão.",
+              category: "atividades",
+              author: "Roberto Silva",
+              authorId: "user_008",
+              createdAt: "2025-01-01T14:20:00Z",
+              updatedAt: "2025-01-01T14:20:00Z",
+              duration: 267, // 4:27
+              views: 1650,
+              likes: 132,
+              comments: 16,
+              thumbnail: "/placeholder.svg?height=200&width=350",
+              videoUrl: "/api/videos/8.mp4",
+              status: "approved",
+              tags: ["dança", "salão", "adaptada", "diversão"],
+              location: "Salão de Dança",
+              participants: ["Casais de Idosos", "Professor Roberto"]
+            },
+            {
+              id: "9",
+              title: "Horta Comunitária - Colheita de Inverno",
+              description: "Os residentes mostram orgulhosos a colheita da horta comunitária do inverno.",
+              category: "atividades",
+              author: "Fernanda Costa",
+              authorId: "user_009",
+              createdAt: "2024-12-28T10:30:00Z",
+              updatedAt: "2024-12-28T10:30:00Z",
+              duration: 198, // 3:18
+              views: 920,
+              likes: 78,
+              comments: 9,
+              thumbnail: "/placeholder.svg?height=200&width=350",
+              videoUrl: "/api/videos/9.mp4",
+              status: "approved",
+              tags: ["horta", "comunitária", "colheita", "natureza"],
+              location: "Horta do Lar",
+              participants: ["Grupo da Horta", "Dona Fernanda"]
+            },
+            {
+              id: "10",
+              title: "Depoimento: 50 Anos de Casamento",
+              description: "Casal de idosos conta a história de 50 anos de casamento e amor verdadeiro.",
+              category: "depoimentos",
+              author: "Marcos Pereira",
+              authorId: "user_010",
+              createdAt: "2024-12-20T16:45:00Z",
+              updatedAt: "2024-12-20T16:45:00Z",
+              duration: 420, // 7:00
+              views: 5200,
+              likes: 456,
+              comments: 67,
+              thumbnail: "/placeholder.svg?height=200&width=350",
+              videoUrl: "/api/videos/10.mp4",
+              status: "approved",
+              tags: ["depoimento", "casamento", "50 anos", "amor"],
+              location: "Quarto do Casal",
+              participants: ["Seu José", "Dona Maria"]
+            }
+          ]
+
+          const apiResponse = {
+            success: true,
+            data: {
+              videos: [],
+              pagination: {
+                currentPage: page,
+                totalPages: Math.ceil(mockVideos.length / 6),
+                totalItems: mockVideos.length,
+                itemsPerPage: 6,
+                hasNext: false,
+                hasPrevious: page > 1
+              },
+              filters: {
+                categories: [
+                  { id: "todos", name: "Todos", count: mockVideos.length },
+                  { id: "atividades", name: "Atividades", count: mockVideos.filter(v => v.category === "atividades").length },
+                  { id: "eventos", name: "Eventos", count: mockVideos.filter(v => v.category === "eventos").length },
+                  { id: "depoimentos", name: "Depoimentos", count: mockVideos.filter(v => v.category === "depoimentos").length },
+                  { id: "tutoriais", name: "Tutoriais", count: mockVideos.filter(v => v.category === "tutoriais").length }
+                ],
+                appliedFilters: {
+                  category: category,
+                  search: search,
+                  page: page
+                }
+              },
+              stats: {
+                totalVideos: mockVideos.length,
+                totalViews: mockVideos.reduce((sum, video) => sum + video.views, 0),
+                totalLikes: mockVideos.reduce((sum, video) => sum + video.likes, 0),
+                totalComments: mockVideos.reduce((sum, video) => sum + video.comments, 0)
+              }
+            },
+            message: "Vídeos carregados com sucesso",
+            timestamp: new Date().toISOString()
+          }
+
+          // Filtrar por categoria e busca
+          let filteredVideos = mockVideos
+
+          if (category !== "todos") {
+            filteredVideos = filteredVideos.filter((video) => video.category === category)
+          }
+
+          if (search) {
+            filteredVideos = filteredVideos.filter(
+              (video) =>
+                video.title.toLowerCase().includes(search.toLowerCase()) ||
+                video.description.toLowerCase().includes(search.toLowerCase()) ||
+                video.tags.some(tag => tag.toLowerCase().includes(search.toLowerCase()))
+            )
+          }
+
+          const startIndex = (page - 1) * 6
+          const endIndex = startIndex + 6
+          const paginatedVideos = filteredVideos.slice(startIndex, endIndex)
+
+          apiResponse.data.videos = paginatedVideos
+          apiResponse.data.pagination.hasNext = endIndex < filteredVideos.length
+          apiResponse.data.pagination.totalItems = filteredVideos.length
+          apiResponse.data.pagination.totalPages = Math.ceil(filteredVideos.length / 6)
+
+          return {
+            videos: paginatedVideos,
+            hasMore: endIndex < filteredVideos.length,
+            totalPages: Math.ceil(filteredVideos.length / 6),
+            currentPage: page,
+            apiResponse: apiResponse // Added full API response structure for backend integration
+          }
+        }
+
+        function cancelUpload() {
+          document.getElementById("uploadForm").style.display = "none"
+          document.getElementById("uploadArea").style.display = "block"
+          document.getElementById("uploadProgress").style.display = "none"
+          document.getElementById("videoFile").value = ""
+          document.getElementById("videoTitle").value = ""
+          document.getElementById("videoDescription").value = ""
+          document.getElementById("videoCategory").value = ""
+          document.getElementById("videoTags").value = ""
+        }
+    </script>
+</body>
+</html>
