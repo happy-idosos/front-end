@@ -1,0 +1,199 @@
+@charset "UTF-8";
+/* RESET E ESTILOS GERAIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  /* Removed padding-top since navbar is no longer fixed */
+}
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Added back button styles from cadastrovoluntario.css */
+.back-btn {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: white;
+  border: 2px solid #244a96;
+  color: #244a96;
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(36, 74, 150, 0.15);
+}
+
+.back-btn:hover {
+  background: #244a96;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(36, 74, 150, 0.25);
+}
+
+/* SEÇÕES PADRÃO */
+.divisor {
+  border: none;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #244a96, transparent);
+  margin: 50px auto;
+  width: 70%;
+  border-radius: 5px;
+}
+
+h2 {
+  color: #244a96;
+  font-size: 2.5rem;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+}
+
+/* Added decorative underline to headings */
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #244a96, #1a3a7a);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* ESTILOS ESPECÍFICOS PARA RECUPERAÇÃO DE SENHA */
+.recuperacao-senha {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  min-height: 100vh; /* Changed from 80vh to 100vh since no header */
+  display: flex;
+  align-items: center;
+  /* Added padding-top to account for back button */
+  padding-top: 2rem;
+}
+
+.recuperacao-senha .card {
+  border-radius: 20px !important;
+  box-shadow: 0 15px 50px rgba(36, 74, 150, 0.1) !important;
+  border: none !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.recuperacao-senha .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #244a96, #1a3a7a);
+}
+
+.recuperacao-senha .form-control {
+  border: 2px solid #e9ecef !important;
+  border-radius: 15px !important;
+  padding: 15px !important;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.recuperacao-senha .form-control:focus {
+  border-color: #244a96 !important;
+  box-shadow: 0 0 0 0.2rem rgba(36, 74, 150, 0.25) !important;
+  transform: translateY(-2px);
+}
+
+.recuperacao-senha .btn-primary {
+  background: linear-gradient(135deg, #244a96, #1a3a7a);
+  border: none;
+  border-radius: 15px !important;
+  padding: 15px !important;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.recuperacao-senha .btn-primary:hover {
+  background: linear-gradient(135deg, #1a3a7a, #112a63);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(36, 74, 150, 0.4);
+}
+
+.recuperacao-senha .btn-primary:disabled {
+  opacity: 0.7;
+  transform: none;
+}
+
+/* SEÇÃO DE INSTRUÇÕES */
+.instrucoes {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.instrucoes h3 {
+  color: #244a96;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.instrucoes h3::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #244a96, #1a3a7a);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.instrucoes .bg-primary {
+  background: linear-gradient(135deg, #244a96, #1a3a7a) !important;
+  transition: all 0.3s ease;
+}
+
+.instrucoes .bg-primary:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(36, 74, 150, 0.3);
+}
+
+/* FOOTER */
+.footer {
+  background: #1a1a1a;
+  color: white;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .back-btn {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
