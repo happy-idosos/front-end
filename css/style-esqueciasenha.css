@@ -18,165 +18,33 @@ body {
   margin: 0 auto;
 }
 
-/* Enhanced transparent header styles */
-.transparent-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  transition: all 0.4s ease;
-  border-bottom: 1px solid rgba(36, 74, 150, 0.1);
-  box-shadow: 0 2px 20px rgba(36, 74, 150, 0.05);
-}
-
-.transparent-header.scrolled {
-  background: rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 4px 30px rgba(36, 74, 150, 0.15);
-  border-bottom: 1px solid rgba(36, 74, 150, 0.2);
-}
-
-/* Improved navbar styles for better responsiveness */
-.navbar {
-  padding: 1rem 0;
-}
-
-.navbar-brand img {
-  height: 80px;
-  transition: all 0.3s ease;
-}
-
-/* Enhanced header buttons container for better layout */
-.header-buttons {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-/* Improved button styles with better sizing */
-.btn-header {
-  font-size: 13px !important;
-  padding: 8px 16px !important;
-  border-radius: 20px !important;
-  font-weight: 600 !important;
-  white-space: nowrap !important;
-  min-width: auto !important;
-  transition: all 0.3s ease !important;
-}
-
-.nav-link {
-  color: #333 !important;
-  font-weight: 600;
-  padding: 8px 12px !important;
-  transition: all 0.3s ease;
-  border-radius: 8px;
-  font-size: 15px;
-  position: relative;
-  white-space: nowrap;
-}
-
-/* Enhanced hover effects for nav links */
-.nav-link::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #244a96;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.nav-link:hover::before,
-.nav-link.active::before {
-  width: 80%;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: #244a96 !important;
-  background-color: rgba(36, 74, 150, 0.1);
-  transform: translateY(-2px);
-}
-
-.navbar-nav .nav-item {
-  margin-right: 8px;
-}
-
-/* Enhanced button styles */
-.btn-outline-primary {
+/* Added back button styles from cadastrovoluntario.css */
+.back-btn {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: white;
+  border: 2px solid #244a96;
   color: #244a96;
-  border-color: #244a96;
-  transition: all 0.3s ease;
-  font-size: 14px;
-  padding: 10px 18px;
+  padding: 0.75rem 1.25rem;
   border-radius: 25px;
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.btn-outline-primary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.btn-outline-primary:hover::before {
-  left: 100%;
-}
-
-.btn-outline-primary:hover {
-  background-color: #244a96;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(36, 74, 150, 0.3);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #244a96, #1a3a7a);
-  border: none;
-  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   transition: all 0.3s ease;
-  font-size: 14px;
-  padding: 10px 18px;
-  border-radius: 25px;
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(36, 74, 150, 0.15);
 }
 
-.btn-primary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.btn-primary:hover::before {
-  left: 100%;
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, #1a3a7a, #112a63);
+.back-btn:hover {
+  background: #244a96;
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(36, 74, 150, 0.4);
+  box-shadow: 0 6px 20px rgba(36, 74, 150, 0.25);
 }
 
 /* SEÇÕES PADRÃO */
@@ -213,9 +81,11 @@ h2::after {
 /* ESTILOS ESPECÍFICOS PARA RECUPERAÇÃO DE SENHA */
 .recuperacao-senha {
   background: linear-gradient(135deg, #f8f9fa, #ffffff);
-  min-height: 80vh;
+  min-height: 100vh; /* Changed from 80vh to 100vh since no header */
   display: flex;
   align-items: center;
+  /* Added padding-top to account for back button */
+  padding-top: 2rem;
 }
 
 .recuperacao-senha .card {
@@ -312,154 +182,18 @@ h2::after {
 }
 
 /* RESPONSIVIDADE */
-@media (max-width: 1199.98px) {
-  .navbar-expand-lg .navbar-collapse {
-    display: none !important;
-  }
-
-  .navbar-expand-lg .navbar-toggler {
-    display: block !important;
-  }
-
-  .transparent-header {
-    background: rgba(255, 255, 255, 0.98) !important;
-    position: relative;
-  }
-
-  .navbar {
-    padding: 1rem 0;
-  }
-
-  .navbar-brand img {
-    height: 70px;
-  }
-
-  .navbar-collapse {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.98);
-    border-radius: 15px;
-    margin-top: 15px;
-    padding: 25px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  }
-
-  .navbar-nav {
-    margin: 15px 0;
-  }
-
-  .nav-item {
-    margin: 5px 0;
-  }
-
-  .header-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  .btn-header {
-    width: 220px !important;
-    text-align: center !important;
-    font-size: 13px !important;
-    padding: 12px 16px !important;
-  }
-
-  .nav-link {
-    font-size: 16px;
-    padding: 10px 20px !important;
-  }
-
-  .recuperacao-senha {
-    margin-top: 80px !important;
+@media (max-width: 768px) {
+  .back-btn {
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
   }
 }
 
-@media (max-width: 991.98px) {
-  .recuperacao-senha {
-    margin-top: 60px !important;
-    padding: 40px 0 !important;
-  }
-
-  .recuperacao-senha .card-body {
-    padding: 2rem !important;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .navbar-brand img {
-    height: 60px;
-  }
-
-  .navbar {
-    padding: 0.8rem 0;
-  }
-
-  .container {
-    width: 95%;
-  }
-
-  .btn-header {
-    width: 100% !important;
-    margin-bottom: 10px !important;
-    font-size: 14px !important;
-    padding: 12px 20px !important;
-  }
-
-  .recuperacao-senha {
-    margin-top: 40px !important;
-    padding: 30px 0 !important;
-  }
-
-  .recuperacao-senha .card-body {
-    padding: 1.5rem !important;
-  }
-
-  .recuperacao-senha .form-control {
-    padding: 12px !important;
-    font-size: 14px !important;
-  }
-
-  .recuperacao-senha .btn-primary {
-    padding: 12px !important;
-    font-size: 14px !important;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  .instrucoes {
-    padding: 40px 0 !important;
-  }
-
-  .instrucoes h3 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 375px) {
-  .navbar-brand img {
-    height: 50px;
-  }
-
-  .recuperacao-senha {
-    margin-top: 30px !important;
-  }
-
-  .recuperacao-senha .card-body {
-    padding: 1rem !important;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .instrucoes h3 {
-    font-size: 1.3rem;
+@media (max-width: 480px) {
+  .back-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
   }
 }
