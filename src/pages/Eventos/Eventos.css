@@ -1,182 +1,25 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Nunito", sans-serif;
-    line-height: 1.6;
-    color: #333;
-    overflow-x: hidden;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
- /* Improved navbar styles for better responsiveness */
-.navbar {
-    padding: 1rem 0;
-  }
-  
-  .navbar-brand img {
-    height: 80px;
-    transition: all 0.3s ease;
-  }
-  
-  /* Enhanced header buttons container for better layout */
-  .header-buttons {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-wrap: nowrap;
-  }
-  
-  /* Improved button styles with better sizing */
-  .btn-header {
-    font-size: 13px !important;
-    padding: 8px 16px !important;
-    border-radius: 20px !important;
-    font-weight: 600 !important;
-    white-space: nowrap !important;
-    min-width: auto !important;
-    transition: all 0.3s ease !important;
-  }
-  
-  .nav-link {
-    color: #333 !important;
-    font-weight: 600;
-    padding: 8px 12px !important;
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    font-size: 15px;
-    position: relative;
-    white-space: nowrap;
-  }
-  
-  /* Enhanced hover effects for nav links */
-  .nav-link::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #244a96;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-  }
-  
-  .nav-link:hover::before,
-  .nav-link.active::before {
-    width: 80%;
-  }
-  
-  .nav-link:hover,
-  .nav-link.active {
-    color: #244a96 !important;
-    background-color: rgba(36, 74, 150, 0.1);
-    transform: translateY(-2px);
-  }
-  
-  .navbar-nav .nav-item {
-    margin-right: 8px;
-  }
-  
-  /* Enhanced button styles */
-  .btn-outline-primary {
-    color: #244a96;
-    border-color: #244a96;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    padding: 10px 18px;
-    border-radius: 25px;
-    font-weight: 600;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  
-  .btn-outline-primary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-  }
-  
-  .btn-outline-primary:hover::before {
-    left: 100%;
-  }
-  
-  .btn-outline-primary:hover {
-    background-color: #244a96;
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(36, 74, 150, 0.3);
-  }
-  
-  .btn-primary {
-    background: linear-gradient(135deg, #244a96, #1a3a7a);
-    border: none;
-    color: #fff;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    padding: 10px 18px;
-    border-radius: 25px;
-    font-weight: 600;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  
-  .btn-primary::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-  }
-  
-  .btn-primary:hover::before {
-    left: 100%;
-  }
-  
-  .btn-primary:hover {
-    background: linear-gradient(135deg, #1a3a7a, #112a63);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(36, 74, 150, 0.4);
-  }
-  
-  /* CAROUSEL STYLES */
-  .carousel-inner img {
+/* Eventos.css - Estilos específicos para a página de Eventos */
+
+/* CAROUSEL STYLES */
+.carousel-inner img {
     max-height: 920px;
     width: 100%;
     object-fit: cover;
     object-position: center 20%;
-  }
-  
-  .carousel-caption h2 {
+}
+
+.carousel-caption h2 {
     font-size: 2.5rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .carousel-caption p {
+}
+
+.carousel-caption p {
     font-size: 1.2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  }
-  
-  .carousel-caption .btn {
+}
+
+.carousel-caption .btn {
     padding: 12px 30px;
     font-size: 1rem;
     margin-top: 15px;
@@ -184,78 +27,85 @@
     font-weight: 600;
     transition: all 0.3s ease;
     cursor: pointer;
-  }
-  
-  .carousel-caption .btn-secondary {
+}
+
+.carousel-caption .btn-secondary {
     background: transparent;
     border: 2px solid white;
     color: white;
-  }
-  
-  .carousel-caption .btn-secondary:hover {
+}
+
+.carousel-caption .btn-secondary:hover {
     background: white;
     color: #244a96;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
-  }
-  
-  .carousel-caption .btn-outline-light {
+}
+
+.carousel-caption .btn-outline-light {
     background: transparent;
     border: 2px solid white;
     color: white;
-  }
-  
-  .carousel-caption .btn-outline-light:hover {
+}
+
+.carousel-caption .btn-outline-light:hover {
     background: white;
     color: #244a96;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
-  }
-  
-  /* EVENTOS SPECIFIC STYLES */
-  .eventos-filtros {
+}
+
+/* Divisor entre carousel e conteúdo */
+.divisor {
+    margin: 0;
+    border-top: 2px solid #e9ecef;
+    opacity: 0.5;
+}
+
+/* EVENTOS SPECIFIC STYLES */
+.eventos-filtros {
     background: #f8f9fa;
     border-bottom: 1px solid #e9ecef;
     margin-top: 0;
-  }
-  
-  .search-box {
+}
+
+.search-box {
     position: relative;
-  }
-  
-  .search-box input {
+}
+
+.search-box input {
     padding-left: 45px;
     border-radius: 25px;
     border: 2px solid #e9ecef;
     transition: all 0.3s ease;
-  }
-  
-  .search-box input:focus {
+}
+
+.search-box input:focus {
     border-color: #244a96;
     box-shadow: 0 0 0 0.2rem rgba(36, 74, 150, 0.25);
-  }
-  
-  .search-icon {
+}
+
+.search-icon {
     position: absolute;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
     color: #6c757d;
-  }
-  
-  .form-select {
+}
+
+.form-select {
     border-radius: 20px;
     border: 2px solid #e9ecef;
     transition: all 0.3s ease;
-  }
-  
-  .form-select:focus {
+}
+
+.form-select:focus {
     border-color: #244a96;
     box-shadow: 0 0 0 0.2rem rgba(36, 74, 150, 0.25);
-  }
-  
-  /* Cards de Eventos */
-  .event-card {
+}
+
+/* Cards de Eventos */
+.event-card {
     background: white;
     border-radius: 20px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -264,9 +114,9 @@
     overflow: hidden;
     position: relative;
     height: 100%;
-  }
-  
-  .event-card::before {
+}
+
+.event-card::before {
     content: "";
     position: absolute;
     top: 0;
@@ -274,18 +124,18 @@
     right: 0;
     height: 4px;
     background: linear-gradient(90deg, #244a96, #1a3a7a);
-  }
-  
-  .event-card:hover {
+}
+
+.event-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 40px rgba(36, 74, 150, 0.2);
-  }
-  
-  .event-card .card-body {
+}
+
+.event-card .card-body {
     padding: 2rem;
-  }
-  
-  .event-icon {
+}
+
+.event-icon {
     width: 80px;
     height: 80px;
     background: linear-gradient(135deg, #244a96, #1a3a7a);
@@ -295,53 +145,51 @@
     justify-content: center;
     margin: 0 auto 1.5rem;
     transition: all 0.3s ease;
-  }
-  
-  .event-card:hover .event-icon {
+}
+
+.event-card:hover .event-icon {
     transform: scale(1.1);
-  }
-  
-  .event-icon img,
-  .event-icon i {
+}
+
+.event-icon i {
     color: white;
     font-size: 2rem;
-    filter: brightness(0) invert(1);
-  }
-  
-  .event-title {
+}
+
+.event-title {
     color: #244a96;
     font-weight: 700;
     font-size: 1.4rem;
     margin-bottom: 1rem;
-  }
-  
-  .event-description {
+}
+
+.event-description {
     color: #666;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-  }
-  
-  .event-details {
+}
+
+.event-details {
     list-style: none;
     padding: 0;
     margin-bottom: 1.5rem;
-  }
-  
-  .event-details li {
+}
+
+.event-details li {
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
     color: #666;
     font-size: 0.9rem;
-  }
-  
-  .event-details i {
+}
+
+.event-details i {
     color: #244a96;
     width: 20px;
     margin-right: 10px;
-  }
-  
-  .event-category {
+}
+
+.event-category {
     display: inline-block;
     background: rgba(36, 74, 150, 0.1);
     color: #244a96;
@@ -350,9 +198,9 @@
     font-size: 0.8rem;
     font-weight: 600;
     margin-bottom: 1rem;
-  }
-  
-  .btn-inscricao {
+}
+
+.btn-inscricao {
     background: linear-gradient(135deg, #244a96, #1a3a7a);
     color: white;
     border: none;
@@ -364,93 +212,94 @@
     transition: all 0.3s ease;
     width: 100%;
     text-align: center;
-  }
-  
-  .btn-inscricao:hover {
+    cursor: pointer;
+}
+
+.btn-inscricao:hover:not(:disabled) {
     background: linear-gradient(135deg, #1a3a7a, #112a63);
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(36, 74, 150, 0.4);
     color: white;
-  }
-  
-  .btn-inscricao:disabled {
+}
+
+.btn-inscricao:disabled {
     background: #6c757d;
     cursor: not-allowed;
     transform: none;
-  }
-  
-  /* Modal de Criar Evento */
-  .modal-content {
+}
+
+/* Modal de Criar Evento */
+.modal-content {
     border-radius: 20px;
     border: none;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-  }
-  
-  .modal-header {
+}
+
+.modal-header {
     background: linear-gradient(135deg, #244a96, #1a3a7a);
     color: white;
     border-radius: 20px 20px 0 0;
     border-bottom: none;
-  }
-  
-  .modal-header .btn-close {
+}
+
+.modal-header .btn-close {
     filter: brightness(0) invert(1);
-  }
-  
-  .modal-body {
+}
+
+.modal-body {
     padding: 2rem;
-  }
-  
-  .form-label {
+}
+
+.form-label {
     font-weight: 600;
     color: #244a96;
     margin-bottom: 0.5rem;
-  }
-  
-  .form-control,
-  .form-select {
+}
+
+.form-control,
+.form-select {
     border-radius: 10px;
     border: 2px solid #e9ecef;
     padding: 12px 15px;
     transition: all 0.3s ease;
-  }
-  
-  .form-control:focus,
-  .form-select:focus {
+}
+
+.form-control:focus,
+.form-select:focus {
     border-color: #244a96;
     box-shadow: 0 0 0 0.2rem rgba(36, 74, 150, 0.25);
-  }
-  
-  /* Estatísticas */
-  .eventos-stats .stat-card {
+}
+
+/* Estatísticas (se necessário no futuro) */
+.eventos-stats .stat-card {
     background: white;
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     border-top: 4px solid #244a96;
-  }
-  
-  .eventos-stats .stat-card:hover {
+}
+
+.eventos-stats .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(36, 74, 150, 0.15);
-  }
-  
-  .stat-number {
+}
+
+.stat-number {
     font-size: 3rem;
     font-weight: 800;
     color: #244a96;
     margin-bottom: 0.5rem;
-  }
-  
-  .stat-label {
+}
+
+.stat-label {
     font-size: 1.1rem;
     color: #666;
     font-weight: 600;
-  }
-  
-  /* Estados dos eventos */
-  .event-status {
+}
+
+/* Estados dos eventos */
+.event-status {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -459,131 +308,139 @@
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
-  }
-  
-  .event-status.disponivel {
+}
+
+.event-status.disponivel {
     background: #d4edda;
     color: #155724;
-  }
-  
-  .event-status.lotado {
+}
+
+.event-status.lotado {
     background: #f8d7da;
     color: #721c24;
-  }
-  
-  .event-status.cancelado {
+}
+
+.event-status.cancelado {
     background: #f1f3f4;
     color: #6c757d;
-  }
-  
-  /* Animações personalizadas */
-  @keyframes fadeInUp {
+}
+
+/* Animações personalizadas */
+@keyframes fadeInUp {
     from {
-      opacity: 0;
-      transform: translateY(30px);
+        opacity: 0;
+        transform: translateY(30px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  .fade-in-up {
+}
+
+.fade-in-up {
     animation: fadeInUp 0.6s ease-out;
-  }
-  
-  /* Loading states */
-  .loading-skeleton {
+}
+
+/* Loading states */
+.loading-skeleton {
     background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
     background-size: 200% 100%;
     animation: loading 1.5s infinite;
-  }
-  
-  @keyframes loading {
+}
+
+@keyframes loading {
     0% {
-      background-position: 200% 0;
+        background-position: 200% 0;
     }
     100% {
-      background-position: -200% 0;
+        background-position: -200% 0;
     }
-  }
-  
-  /* RESPONSIVE */
-  @media (max-width: 991.98px) {
-    .navbar-nav {
-      text-align: center;
-      margin-top: 1rem;
-    }
-  
-    .navbar-nav .nav-link {
-      margin: 0.5rem 0;
-    }
-  
-    .d-flex.flex-column.flex-lg-row {
-      flex-direction: column !important;
-      align-items: center;
-      gap: 0.5rem;
-    }
-  
+}
+
+/* RESPONSIVE */
+@media (max-width: 991.98px) {
     .carousel-inner img {
-      max-height: 500px;
+        max-height: 500px;
     }
-  }
-  
-  @media (max-width: 575.98px) {
+}
+
+@media (max-width: 575.98px) {
     .carousel-caption h2 {
-      font-size: 1.8rem;
+        font-size: 1.8rem;
     }
-  
+
     .carousel-caption p {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  
+
     .carousel-inner img {
-      max-height: 400px;
+        max-height: 400px;
     }
-  
+
     .event-card .card-body {
-      padding: 1.5rem;
+        padding: 1.5rem;
     }
-  
+
     .event-icon {
-      width: 60px;
-      height: 60px;
+        width: 60px;
+        height: 60px;
     }
-  
+
     .event-icon i {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  
+
     .modal-body {
-      padding: 1rem;
+        padding: 1rem;
     }
-  }
-  
-  @media (max-width: 375px) {
+}
+
+@media (max-width: 375px) {
     .carousel-inner img {
-      max-height: 300px;
+        max-height: 300px;
     }
-  
+
     .carousel-caption {
-      padding-bottom: 1rem;
+        padding-bottom: 1rem;
     }
-  
+
     .carousel-caption h2 {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  
+
     .carousel-caption p {
-      font-size: 0.9rem;
+        font-size: 0.9rem;
     }
-  
+
     .carousel-caption .btn {
-      padding: 8px 20px;
-      font-size: 0.9rem;
+        padding: 8px 20px;
+        font-size: 0.9rem;
     }
-  
+
     .event-card .card-body {
-      padding: 1rem;
+        padding: 1rem;
     }
-  }
+}
+
+/* Estilos específicos para a página de eventos */
+.eventos-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.eventos-lista {
+    flex: 1;
+}
+
+/* Ajustes para o modal customizado do React */
+.modal.show {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Garantir que os botões do carousel funcionem corretamente */
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 1;
+}

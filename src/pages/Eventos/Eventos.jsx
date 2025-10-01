@@ -1,705 +1,608 @@
-<!DOCTYPE html>
-<html lang="PT-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos - Happy Idosos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Updated CSS reference to external file -->
-    <link rel="stylesheet" href="css/style-eventos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import './Eventos.css';
+
+const Eventos = () => {
+    const navigate = useNavigate();
     
-</head>
-<body>
-    <header>
-        <!-- Navbar idêntica ao index.html -->
-        <nav class="navbar navbar-expand-lg transparent-header" id="mainNavbar">
-            <div class="container">
-                <a class="navbar-brand" href="index.html" data-aos="fade-right" data-aos-duration="1000">
-                    <img src="img/happyidosos.png" alt="Logo Happy Idosos" style="height: 80px;" >
-                </a>
-               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="asilos.html">Buscar Asilos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="eventos.html">Eventos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="videos.html">Vídeos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sobrenos.html">Sobre Nós</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contato.html">Contato</a>
-                        </li>
-                    </ul>
-                     <div class="d-flex flex-column flex-lg-row ms-lg-3 mt-3 mt-lg-0 gap-2">
-                        <a href="cadastrovoluntario.html" class="btn btn-outline-primary">Fazer Parte - Voluntário</a>
-                        <a href="cadastroasilo.html" class="btn btn-primary">Fazer Parte - Asilo</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Carousel with event-focused content -->
-    <div id="carouselExampleCaptions" class="carousel slide hero-carousel" data-bs-ride="carousel" data-aos="fade-up" data-aos-duration="1200">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/mulheres-trabalhando-juntas-no-campo (1).jpg" class="d-block w-100" alt="Voluntários em atividade">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>Eventos para Voluntários e Idosos</h2>
-                    <p>Participe de eventos ou crie o seu próprio para promover a interação entre voluntários e idosos</p>
-                    <button class="btn btn-secondary" onclick="showCreateEventModal()">Criar Evento</button>
-                    <button class="btn btn-outline-light" onclick="scrollToEvents()">Ver Eventos</button>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/enfermeira-examinando-mulher-idosa-ao-ar-livre-em-uma-casa-de-repouso.jpg" class="d-block w-100" alt="Cuidado com idosos">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>Conecte-se Através de Eventos</h2>
-                    <p>Descubra oportunidades únicas de voluntariado e participe de atividades significativas</p>
-                    <button class="btn btn-secondary" onclick="showCreateEventModal()">Criar Evento</button>
-                    <button class="btn btn-outline-light" onclick="scrollToEvents()">Ver Eventos</button>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/mulheres-trabalhando-juntas-no-campo.jpg" class="d-block w-100" alt="Trabalho em equipe">
-                <div class="carousel-caption d-none d-md-block">
-                    <h2>Faça a Diferença</h2>
-                    <p>Organize eventos especiais e crie momentos inesquecíveis para nossa comunidade</p>
-                    <button class="btn btn-secondary" onclick="showCreateEventModal()">Criar Evento</button>
-                    <button class="btn btn-outline-light" onclick="scrollToEvents()">Ver Eventos</button>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-    <hr class="divisor">
-
-    <main>
-        <!-- Filtros e Busca -->
-        <section class="eventos-filtros py-4" data-aos="fade-up" data-aos-duration="800">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <div class="search-box">
-                            <input type="text" id="searchInput" class="form-control" placeholder="Buscar eventos...">
-                            <i class="fas fa-search search-icon"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="d-flex gap-2 flex-wrap">
-                            <select id="categoryFilter" class="form-select">
-                                <option value="">Todas as categorias</option>
-                                <option value="musica">Música</option>
-                                <option value="arte">Arte</option>
-                                <option value="conversa">Conversa</option>
-                                <option value="exercicio">Exercício</option>
-                                <option value="culinaria">Culinária</option>
-                            </select>
-                            <select id="dateFilter" class="form-select">
-                                <option value="">Todas as datas</option>
-                                <option value="hoje">Hoje</option>
-                                <option value="semana">Esta semana</option>
-                                <option value="mes">Este mês</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Lista de Eventos -->
-        <section class="eventos-lista py-5" id="eventosSection" data-aos="fade-up" data-aos-duration="800">
-            <div class="container">
-                <h2 class="text-center mb-5">Próximos Eventos</h2>
-                
-                <!-- Loading spinner -->
-                <div id="loadingSpinner" class="text-center py-5">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">Carregando...</span>
-                    </div>
-                </div>
-
-                <!-- Container para os eventos -->
-                <div id="eventosContainer" class="row" style="display: none;">
-                    <!-- Eventos serão carregados aqui via JavaScript -->
-                </div>
-
-                <!-- Mensagem quando não há eventos -->
-                <div id="noEventsMessage" class="text-center py-5" style="display: none;">
-                    <i class="fas fa-calendar-times fa-3x text-muted mb-3"></i>
-                    <h4 class="text-muted">Nenhum evento encontrado</h4>
-                    <p class="text-muted">Tente ajustar os filtros ou criar um novo evento.</p>
-                </div>
-
-                <!-- Botão carregar mais -->
-                <div class="text-center mt-4">
-                    <button id="loadMoreBtn" class="btn btn-outline-primary btn-lg" style="display: none;">
-                        Carregar Mais Eventos
-                    </button>
-                </div>
-            </div>
-        </section>  
-    </main>
-
-    <!-- Modal para Criar Evento -->
-    <div class="modal fade" id="createEventModal" tabindex="-1" aria-labelledby="createEventModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="createEventModalLabel">Criar Novo Evento</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="createEventForm">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="eventTitle" class="form-label">Título do Evento *</label>
-                                <input type="text" class="form-control" id="eventTitle" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="eventCategory" class="form-label">Categoria *</label>
-                                <select class="form-select" id="eventCategory" required>
-                                    <option value="">Selecione uma categoria</option>
-                                    <option value="musica">Música</option>
-                                    <option value="arte">Arte</option>
-                                    <option value="conversa">Conversa</option>
-                                    <option value="exercicio">Exercício</option>
-                                    <option value="culinaria">Culinária</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="eventDescription" class="form-label">Descrição *</label>
-                            <textarea class="form-control" id="eventDescription" rows="3" required></textarea>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="eventDate" class="form-label">Data *</label>
-                                <input type="date" class="form-control" id="eventDate" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="eventTime" class="form-label">Horário *</label>
-                                <input type="time" class="form-control" id="eventTime" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8 mb-3">
-                                <label for="eventLocation" class="form-label">Local *</label>
-                                <input type="text" class="form-control" id="eventLocation" required>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="eventCapacity" class="form-label">Capacidade</label>
-                                <input type="number" class="form-control" id="eventCapacity" min="1">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="eventContact" class="form-label">Contato do Organizador *</label>
-                            <input type="email" class="form-control" id="eventContact" required>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" onclick="createEvent()">
-                        <i class="fas fa-plus me-2"></i>Criar Evento
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer idêntico ao index.html -->
-    <footer class="footer bg-dark text-white text-center py-3" data-aos="fade-up">
-        <div class="container">
-            <p class="mb-0">Happy Idosos &copy; 2025. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    // API Configuration
+    const API_BASE_URL = "https://api.happyidosos.com"; // Substitua pela URL da sua API
     
-    <script>
-        // API Configuration
-        const API_BASE_URL = "https://api.happyidosos.com" // Substitua pela URL da sua API
-        let currentPage = 1
-        let isLoading = false
-        let allEvents = []
-
-        // DOM Elements
-        const eventosContainer = document.getElementById("eventosContainer")
-        const loadingSpinner = document.getElementById("loadingSpinner")
-        const noEventsMessage = document.getElementById("noEventsMessage")
-        const loadMoreBtn = document.getElementById("loadMoreBtn")
-        const searchInput = document.getElementById("searchInput")
-        const categoryFilter = document.getElementById("categoryFilter")
-        const dateFilter = document.getElementById("dateFilter")
-
-        // Bootstrap Modal
-        const bootstrap = window.bootstrap
-
-        // Initialize page
-        document.addEventListener("DOMContentLoaded", () => {
-            // Initialize AOS animations
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true,
-                offset: 100
-            });
-            
-            loadEvents()
-            loadStats()
-            setupEventListeners()
-        })
-
-        // Setup event listeners
-        function setupEventListeners() {
-            // Search and filters
-            searchInput.addEventListener("input", debounce(filterEvents, 300))
-            categoryFilter.addEventListener("change", filterEvents)
-            dateFilter.addEventListener("change", filterEvents)
-
-            // Load more button
-            loadMoreBtn.addEventListener("click", loadMoreEvents)
-
-            // Form submission
-            document.getElementById("createEventForm").addEventListener("submit", (e) => {
-                e.preventDefault()
-                createEvent()
-            })
-        }
-
-        // Load events from API
-        async function loadEvents(page = 1) {
-            if (isLoading) return
-
-            isLoading = true
-            showLoading()
-
-            try {
-                // Simulated API call - replace with actual API endpoint
-                const response = await fetch(`${API_BASE_URL}/eventos?page=${page}&limit=12`)
-
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar eventos")
-                }
-
-                const data = await response.json()
-
-                if (page === 1) {
-                    allEvents = data.events || []
-                } else {
-                    allEvents = [...allEvents, ...(data.events || [])]
-                }
-
-                displayEvents(allEvents)
-
-                // Show/hide load more button
-                if (data.hasMore) {
-                    loadMoreBtn.style.display = "block"
-                } else {
-                    loadMoreBtn.style.display = "none"
-                }
-            } catch (error) {
-                console.error("Erro ao carregar eventos:", error)
-                loadMockEvents()
-            } finally {
-                isLoading = false
-                hideLoading()
-            }
-        }
-
-        function loadMockEvents() {
-            // Generate simple mock events for demonstration
-            const categories = ["musica", "arte", "conversa", "exercicio", "culinaria"]
-            const mockEvents = []
-            
-            for (let i = 1; i <= 6; i++) {
-                mockEvents.push({
-                    id: i,
-                    title: `Evento ${i}`,
-                    description: `Descrição do evento ${i}`,
-                    category: categories[i % categories.length],
-                    date: new Date(Date.now() + i * 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-                    time: "14:00",
-                    location: `Local ${i}`,
-                    capacity: 30,
-                    registered: Math.floor(Math.random() * 25),
-                    status: "disponivel",
-                    organizer: `Organizador ${i}`,
-                    contact: `contato${i}@exemplo.com`
-                })
-            }
-
-            allEvents = mockEvents
-            displayEvents(allEvents)
-        }
-
-
-        // Display events in the container
-        function displayEvents(events) {
-            if (!events || events.length === 0) {
-                showNoEventsMessage()
-                return
-            }
-
-            hideNoEventsMessage()
-
-            const eventsHTML = events.map((event) => createEventCard(event)).join("")
-            eventosContainer.innerHTML = eventsHTML
-            eventosContainer.style.display = "flex"
-
-            // Add animation to new cards
-            const cards = eventosContainer.querySelectorAll(".event-card")
-            cards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`
-                card.classList.add("fade-in-up")
-            })
-        }
-
-        // Create event card HTML
-        function createEventCard(event) {
-            const categoryIcons = {
-                musica: "fas fa-music",
-                arte: "fas fa-palette",
-                conversa: "fas fa-comments",
-                exercicio: "fas fa-dumbbell",
-                culinaria: "fas fa-utensils",
-            }
-
-            const statusText = {
-                disponivel: "Disponível",
-                lotado: "Lotado",
-                cancelado: "Cancelado",
-            }
-
-            const formatDate = (dateStr) => {
-                const date = new Date(dateStr)
-                return date.toLocaleDateString("pt-BR", {
-                    day: "2-digit",
-                    month: "long",
-                    year: "numeric",
-                })
-            }
-
-            const formatTime = (timeStr) => {
-                return timeStr.substring(0, 5)
-            }
-
-            return `
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card event-card">
-                        <div class="event-status ${event.status}">${statusText[event.status]}</div>
-                        <div class="card-body text-center">
-                            <div class="event-icon">
-                                <i class="${categoryIcons[event.category] || "fas fa-calendar"}"></i>
-                            </div>
-                            <div class="event-category">${event.category.charAt(0).toUpperCase() + event.category.slice(1)}</div>
-                            <h3 class="event-title">${event.title}</h3>
-                            <p class="event-description">${event.description}</p>
-                            <ul class="event-details">
-                                <li><i class="fas fa-calendar-days"></i> ${formatDate(event.date)}</li>
-                                <li><i class="fas fa-clock"></i> ${formatTime(event.time)}</li>
-                                <li><i class="fas fa-location-dot"></i> ${event.location}</li>
-                                <li><i class="fas fa-users"></i> ${event.registered}/${event.capacity} inscritos</li>
-                            </ul>
-                            <button class="btn-inscricao" 
-                                    onclick="inscreverEvento(${event.id})" 
-                                    ${event.status === "lotado" || event.status === "cancelado" ? "disabled" : ""}>
-                                ${
-                                  event.status === "lotado"
-                                    ? "Evento Lotado"
-                                    : event.status === "cancelado"
-                                      ? "Evento Cancelado"
-                                      : "Inscrever-se"
-                                }
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `
-        }
-
-        // Filter events based on search and filters
-        function filterEvents() {
-            const searchTerm = searchInput.value.toLowerCase()
-            const selectedCategory = categoryFilter.value
-            const selectedDate = dateFilter.value
-
-            const filteredEvents = allEvents.filter((event) => {
-                const matchesSearch =
-                    event.title.toLowerCase().includes(searchTerm) ||
-                    event.description.toLowerCase().includes(searchTerm) ||
-                    event.location.toLowerCase().includes(searchTerm)
-
-                const matchesCategory = !selectedCategory || event.category === selectedCategory
-
-                let matchesDate = true
-                if (selectedDate) {
-                    const eventDate = new Date(event.date)
-                    const today = new Date()
-
-                    switch (selectedDate) {
-                        case "hoje":
-                            matchesDate = eventDate.toDateString() === today.toDateString()
-                            break
-                        case "semana":
-                            const weekFromNow = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000)
-                            matchesDate = eventDate >= today && eventDate <= weekFromNow
-                            break
-                        case "mes":
-                            const monthFromNow = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate())
-                            matchesDate = eventDate >= today && eventDate <= monthFromNow
-                            break
-                    }
-                }
-
-                return matchesSearch && matchesCategory && matchesDate
-            })
-
-            displayEvents(filteredEvents)
-        }
-
-        // Load more events
-        function loadMoreEvents() {
-            currentPage++
-            loadEvents(currentPage)
-        }
-
-        // Create new event
-        async function createEvent() {
-            const form = document.getElementById("createEventForm")
-            const formData = new FormData(form)
-
-            const eventData = {
-                title: document.getElementById("eventTitle").value,
-                category: document.getElementById("eventCategory").value,
-                description: document.getElementById("eventDescription").value,
-                date: document.getElementById("eventDate").value,
-                time: document.getElementById("eventTime").value,
-                location: document.getElementById("eventLocation").value,
-                capacity: document.getElementById("eventCapacity").value || 50,
-                contact: document.getElementById("eventContact").value,
-            }
-
-            try {
-                const response = await fetch(`${API_BASE_URL}/eventos`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(eventData),
-                })
-
-                if (!response.ok) {
-                    throw new Error("Erro ao criar evento")
-                }
-
-                const newEvent = await response.json()
-
-                // Add to events list
-                allEvents.unshift(newEvent)
-                displayEvents(allEvents)
-
-                // Close modal and reset form
-                const modal = bootstrap.Modal.getInstance(document.getElementById("createEventModal"))
-                modal.hide()
-                form.reset()
-
-                // Show success message
-                showSuccessMessage("Evento criado com sucesso!")
-            } catch (error) {
-                console.error("Erro ao criar evento:", error)
-                showErrorMessage("Erro ao criar evento. Tente novamente.")
-            }
-        }
-
-        // Subscribe to event
-        async function inscreverEvento(eventId) {
-            try {
-                const response = await fetch(`${API_BASE_URL}/eventos/${eventId}/inscricao`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                })
-
-                if (!response.ok) {
-                    throw new Error("Erro ao se inscrever no evento")
-                }
-
-                // Update event in local array
-                const eventIndex = allEvents.findIndex((e) => e.id === eventId)
-                if (eventIndex !== -1) {
-                    allEvents[eventIndex].registered++
-                    if (allEvents[eventIndex].registered >= allEvents[eventIndex].capacity) {
-                        allEvents[eventIndex].status = "lotado"
-                    }
-                }
-
-                displayEvents(allEvents)
-                showSuccessMessage("Inscrição realizada com sucesso!")
-            } catch (error) {
-                console.error("Erro ao se inscrever:", error)
-                showErrorMessage("Erro ao se inscrever. Tente novamente.")
-            }
-        }
-
-        // Load statistics
-        async function loadStats() {
-            try {
-                const response = await fetch(`${API_BASE_URL}/eventos/stats`)
-
-                if (!response.ok) {
-                    throw new Error("Erro ao carregar estatísticas")
-                }
-
-                const stats = await response.json()
-
-                animateCounter("totalEventos", stats.totalEventos || 156)
-                animateCounter("totalParticipantes", stats.totalParticipantes || 2340)
-                animateCounter("eventosProximos", stats.eventosProximos || 23)
-                animateCounter("asilosParticipantes", stats.asilosParticipantes || 45)
-            } catch (error) {
-                console.error("Erro ao carregar estatísticas:", error)
-                // Fallback to mock data
-                animateCounter("totalEventos", 156)
-                animateCounter("totalParticipantes", 2340)
-                animateCounter("eventosProximos", 23)
-                animateCounter("asilosParticipantes", 45)
-            }
-        }
-
-        // Utility functions
-        function showLoading() {
-            loadingSpinner.style.display = "block"
-            eventosContainer.style.display = "none"
-            noEventsMessage.style.display = "none"
-        }
-
-        function hideLoading() {
-            loadingSpinner.style.display = "none"
-        }
-
-        function showNoEventsMessage() {
-            noEventsMessage.style.display = "block"
-            eventosContainer.style.display = "none"
-        }
-
-        function hideNoEventsMessage() {
-            noEventsMessage.style.display = "none"
-        }
-
-        function showCreateEventModal() {
-            const modal = new bootstrap.Modal(document.getElementById("createEventModal"))
-            modal.show()
-        }
-
-        function scrollToEvents() {
-            document.getElementById("eventosSection").scrollIntoView({
-                behavior: "smooth",
-            })
-        }
-
-        function debounce(func, wait) {
-            let timeout
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout)
-                    func(...args)
-                }
-                clearTimeout(timeout)
-                timeout = setTimeout(later, wait)
-            }
-        }
-
-        function animateCounter(elementId, targetValue) {
-            const element = document.getElementById(elementId)
-            const duration = 2000
-            const startValue = 0
-            const increment = targetValue / (duration / 16)
-            let currentValue = startValue
-
-            const timer = setInterval(() => {
-                currentValue += increment
-                if (currentValue >= targetValue) {
-                    currentValue = targetValue
-                    clearInterval(timer)
-                }
-                element.textContent = Math.floor(currentValue)
-            }, 16)
-        }
-
-        function showSuccessMessage(message) {
-            // Create and show success toast/alert
-            const alert = document.createElement("div")
-            alert.className = "alert alert-success alert-dismissible fade show position-fixed"
-            alert.style.cssText = "top: 20px; right: 20px; z-index: 9999; min-width: 300px;"
-            alert.innerHTML = `
-                ${message}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            `
-            document.body.appendChild(alert)
-
-            setTimeout(() => {
-                alert.remove()
-            }, 5000)
-        }
-
-        function showErrorMessage(message) {
-            // Create and show error toast/alert
-            const alert = document.createElement("div")
-            alert.className = "alert alert-danger alert-dismissible fade show position-fixed"
-            alert.style.cssText = "top: 20px; right: 20px; z-index: 9999; min-width: 300px;"
-            alert.innerHTML = `
-                ${message}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            `
-            document.body.appendChild(alert)
-
-            setTimeout(() => {
-                alert.remove()
-            }, 5000)
-        }
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('mainNavbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+    // State management
+    const [currentPage, setCurrentPage] = useState(1);
+    const [isLoading, setIsLoading] = useState(false);
+    const [allEvents, setAllEvents] = useState([]);
+    const [filteredEvents, setFilteredEvents] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState('');
+    const [selectedDate, setSelectedDate] = useState('');
+    const [showModal, setShowModal] = useState(false);
+    const [hasMore, setHasMore] = useState(false);
+    
+    // Form state
+    const [eventForm, setEventForm] = useState({
+        title: '',
+        category: '',
+        description: '',
+        date: '',
+        time: '',
+        location: '',
+        capacity: '',
+        contact: ''
+    });
+
+    // Refs
+    const eventosSectionRef = useRef(null);
+
+    // Initialize AOS
+    useEffect(() => {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
         });
-    </script>
-</body>
-</html>
+        
+        loadEvents();
+        loadStats();
+    }, []);
+
+    // Filter events when filters change
+    useEffect(() => {
+        filterEvents();
+    }, [searchTerm, selectedCategory, selectedDate, allEvents]);
+
+    // Load events from API
+    const loadEvents = async (page = 1) => {
+        if (isLoading) return;
+
+        setIsLoading(true);
+
+        try {
+            // Simulated API call - replace with actual API endpoint
+            const response = await fetch(`${API_BASE_URL}/eventos?page=${page}&limit=12`);
+
+            if (!response.ok) {
+                throw new Error("Erro ao carregar eventos");
+            }
+
+            const data = await response.json();
+
+            if (page === 1) {
+                setAllEvents(data.events || []);
+            } else {
+                setAllEvents(prev => [...prev, ...(data.events || [])]);
+            }
+
+            setHasMore(data.hasMore || false);
+            setCurrentPage(page);
+        } catch (error) {
+            console.error("Erro ao carregar eventos:", error);
+            loadMockEvents();
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const loadMockEvents = () => {
+        const categories = ["musica", "arte", "conversa", "exercicio", "culinaria"];
+        const mockEvents = [];
+        
+        for (let i = 1; i <= 6; i++) {
+            mockEvents.push({
+                id: i,
+                title: `Evento ${i}`,
+                description: `Descrição do evento ${i}`,
+                category: categories[i % categories.length],
+                date: new Date(Date.now() + i * 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
+                time: "14:00",
+                location: `Local ${i}`,
+                capacity: 30,
+                registered: Math.floor(Math.random() * 25),
+                status: "disponivel",
+                organizer: `Organizador ${i}`,
+                contact: `contato${i}@exemplo.com`
+            });
+        }
+
+        setAllEvents(mockEvents);
+    };
+
+    // Filter events based on search and filters
+    const filterEvents = () => {
+        const filtered = allEvents.filter((event) => {
+            const matchesSearch =
+                event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                event.location.toLowerCase().includes(searchTerm.toLowerCase());
+
+            const matchesCategory = !selectedCategory || event.category === selectedCategory;
+
+            let matchesDate = true;
+            if (selectedDate) {
+                const eventDate = new Date(event.date);
+                const today = new Date();
+
+                switch (selectedDate) {
+                    case "hoje":
+                        matchesDate = eventDate.toDateString() === today.toDateString();
+                        break;
+                    case "semana":
+                        const weekFromNow = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+                        matchesDate = eventDate >= today && eventDate <= weekFromNow;
+                        break;
+                    case "mes":
+                        const monthFromNow = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+                        matchesDate = eventDate >= today && eventDate <= monthFromNow;
+                        break;
+                }
+            }
+
+            return matchesSearch && matchesCategory && matchesDate;
+        });
+
+        setFilteredEvents(filtered);
+    };
+
+    // Load more events
+    const loadMoreEvents = () => {
+        loadEvents(currentPage + 1);
+    };
+
+    // Create new event
+    const createEvent = async () => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/eventos`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(eventForm),
+            });
+
+            if (!response.ok) {
+                throw new Error("Erro ao criar evento");
+            }
+
+            const newEvent = await response.json();
+
+            // Add to events list
+            setAllEvents(prev => [newEvent, ...prev]);
+
+            // Close modal and reset form
+            setShowModal(false);
+            setEventForm({
+                title: '',
+                category: '',
+                description: '',
+                date: '',
+                time: '',
+                location: '',
+                capacity: '',
+                contact: ''
+            });
+
+            // Show success message
+            showSuccessMessage("Evento criado com sucesso!");
+        } catch (error) {
+            console.error("Erro ao criar evento:", error);
+            showErrorMessage("Erro ao criar evento. Tente novamente.");
+        }
+    };
+
+    // Subscribe to event
+    const inscreverEvento = async (eventId) => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/eventos/${eventId}/inscricao`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (!response.ok) {
+                throw new Error("Erro ao se inscrever no evento");
+            }
+
+            // Update event in local array
+            setAllEvents(prev => prev.map(event => {
+                if (event.id === eventId) {
+                    const updatedRegistered = event.registered + 1;
+                    const newStatus = updatedRegistered >= event.capacity ? "lotado" : "disponivel";
+                    return {
+                        ...event,
+                        registered: updatedRegistered,
+                        status: newStatus
+                    };
+                }
+                return event;
+            }));
+
+            showSuccessMessage("Inscrição realizada com sucesso!");
+        } catch (error) {
+            console.error("Erro ao se inscrever:", error);
+            showErrorMessage("Erro ao se inscrever. Tente novamente.");
+        }
+    };
+
+    // Load statistics
+    const loadStats = async () => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/eventos/stats`);
+
+            if (!response.ok) {
+                throw new Error("Erro ao carregar estatísticas");
+            }
+
+            const stats = await response.json();
+            // Implementar animação dos contadores se necessário
+        } catch (error) {
+            console.error("Erro ao carregar estatísticas:", error);
+            // Fallback para dados mock se necessário
+        }
+    };
+
+    // Utility functions
+    const showCreateEventModal = () => {
+        setShowModal(true);
+    };
+
+    const scrollToEvents = () => {
+        eventosSectionRef.current?.scrollIntoView({
+            behavior: "smooth",
+        });
+    };
+
+    const showSuccessMessage = (message) => {
+        alert(message); // Substituir por toast/notification component
+    };
+
+    const showErrorMessage = (message) => {
+        alert(message); // Substituir por toast/notification component
+    };
+
+    // Event card component
+    const EventCard = ({ event }) => {
+        const categoryIcons = {
+            musica: "fas fa-music",
+            arte: "fas fa-palette",
+            conversa: "fas fa-comments",
+            exercicio: "fas fa-dumbbell",
+            culinaria: "fas fa-utensils",
+        };
+
+        const statusText = {
+            disponivel: "Disponível",
+            lotado: "Lotado",
+            cancelado: "Cancelado",
+        };
+
+        const formatDate = (dateStr) => {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString("pt-BR", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+            });
+        };
+
+        const formatTime = (timeStr) => {
+            return timeStr.substring(0, 5);
+        };
+
+        return (
+            <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card event-card">
+                    <div className={`event-status ${event.status}`}>
+                        {statusText[event.status]}
+                    </div>
+                    <div className="card-body text-center">
+                        <div className="event-icon">
+                            <i className={categoryIcons[event.category] || "fas fa-calendar"}></i>
+                        </div>
+                        <div className="event-category">
+                            {event.category.charAt(0).toUpperCase() + event.category.slice(1)}
+                        </div>
+                        <h3 className="event-title">{event.title}</h3>
+                        <p className="event-description">{event.description}</p>
+                        <ul className="event-details">
+                            <li><i className="fas fa-calendar-days"></i> {formatDate(event.date)}</li>
+                            <li><i className="fas fa-clock"></i> {formatTime(event.time)}</li>
+                            <li><i className="fas fa-location-dot"></i> {event.location}</li>
+                            <li><i className="fas fa-users"></i> {event.registered}/{event.capacity} inscritos</li>
+                        </ul>
+                        <button 
+                            className="btn-inscricao" 
+                            onClick={() => inscreverEvento(event.id)}
+                            disabled={event.status === "lotado" || event.status === "cancelado"}
+                        >
+                            {event.status === "lotado"
+                                ? "Evento Lotado"
+                                : event.status === "cancelado"
+                                ? "Evento Cancelado"
+                                : "Inscrever-se"}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
+    return (
+        <div className="eventos-page">
+            <Header />
+            
+            {/* Carousel */}
+            <div id="carouselExampleCaptions" className="carousel slide hero-carousel" data-bs-ride="carousel" data-aos="fade-up" data-aos-duration="1200">
+                <div className="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div className="carousel-inner">
+                    <div className="carousel-item active">
+                        <img src="/img/mulheres-trabalhando-juntas-no-campo (1).jpg" className="d-block w-100" alt="Voluntários em atividade" />
+                        <div className="carousel-caption d-none d-md-block">
+                            <h2>Eventos para Voluntários e Idosos</h2>
+                            <p>Participe de eventos ou crie o seu próprio para promover a interação entre voluntários e idosos</p>
+                            <button className="btn btn-secondary" onClick={showCreateEventModal}>Criar Evento</button>
+                            <button className="btn btn-outline-light" onClick={scrollToEvents}>Ver Eventos</button>
+                        </div>
+                    </div>
+                    <div className="carousel-item">
+                        <img src="/img/enfermeira-examinando-mulher-idosa-ao-ar-livre-em-uma-casa-de-repouso.jpg" className="d-block w-100" alt="Cuidado com idosos" />
+                        <div className="carousel-caption d-none d-md-block">
+                            <h2>Conecte-se Através de Eventos</h2>
+                            <p>Descubra oportunidades únicas de voluntariado e participe de atividades significativas</p>
+                            <button className="btn btn-secondary" onClick={showCreateEventModal}>Criar Evento</button>
+                            <button className="btn btn-outline-light" onClick={scrollToEvents}>Ver Eventos</button>
+                        </div>
+                    </div>
+                    <div className="carousel-item">
+                        <img src="/img/mulheres-trabalhando-juntas-no-campo.jpg" className="d-block w-100" alt="Trabalho em equipe" />
+                        <div className="carousel-caption d-none d-md-block">
+                            <h2>Faça a Diferença</h2>
+                            <p>Organize eventos especiais e crie momentos inesquecíveis para nossa comunidade</p>
+                            <button className="btn btn-secondary" onClick={showCreateEventModal}>Criar Evento</button>
+                            <button className="btn btn-outline-light" onClick={scrollToEvents}>Ver Eventos</button>
+                        </div>
+                    </div>
+                </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <hr className="divisor" />
+
+            <main>
+                {/* Filtros e Busca */}
+                <section className="eventos-filtros py-4" data-aos="fade-up" data-aos-duration="800">
+                    <div className="container">
+                        <div className="row align-items-center">
+                            <div className="col-md-6">
+                                <div className="search-box">
+                                    <input 
+                                        type="text" 
+                                        className="form-control" 
+                                        placeholder="Buscar eventos..."
+                                        value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)}
+                                    />
+                                    <i className="fas fa-search search-icon"></i>
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="d-flex gap-2 flex-wrap">
+                                    <select 
+                                        className="form-select"
+                                        value={selectedCategory}
+                                        onChange={(e) => setSelectedCategory(e.target.value)}
+                                    >
+                                        <option value="">Todas as categorias</option>
+                                        <option value="musica">Música</option>
+                                        <option value="arte">Arte</option>
+                                        <option value="conversa">Conversa</option>
+                                        <option value="exercicio">Exercício</option>
+                                        <option value="culinaria">Culinária</option>
+                                    </select>
+                                    <select 
+                                        className="form-select"
+                                        value={selectedDate}
+                                        onChange={(e) => setSelectedDate(e.target.value)}
+                                    >
+                                        <option value="">Todas as datas</option>
+                                        <option value="hoje">Hoje</option>
+                                        <option value="semana">Esta semana</option>
+                                        <option value="mes">Este mês</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Lista de Eventos */}
+                <section className="eventos-lista py-5" id="eventosSection" ref={eventosSectionRef} data-aos="fade-up" data-aos-duration="800">
+                    <div className="container">
+                        <h2 className="text-center mb-5">Próximos Eventos</h2>
+                        
+                        {/* Loading spinner */}
+                        {isLoading && (
+                            <div className="text-center py-5">
+                                <div className="spinner-border text-primary" role="status">
+                                    <span className="visually-hidden">Carregando...</span>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Container para os eventos */}
+                        {!isLoading && filteredEvents.length > 0 && (
+                            <div className="row">
+                                {filteredEvents.map((event) => (
+                                    <EventCard key={event.id} event={event} />
+                                ))}
+                            </div>
+                        )}
+
+                        {/* Mensagem quando não há eventos */}
+                        {!isLoading && filteredEvents.length === 0 && (
+                            <div className="text-center py-5">
+                                <i className="fas fa-calendar-times fa-3x text-muted mb-3"></i>
+                                <h4 className="text-muted">Nenhum evento encontrado</h4>
+                                <p className="text-muted">Tente ajustar os filtros ou criar um novo evento.</p>
+                            </div>
+                        )}
+
+                        {/* Botão carregar mais */}
+                        {hasMore && (
+                            <div className="text-center mt-4">
+                                <button className="btn btn-outline-primary btn-lg" onClick={loadMoreEvents}>
+                                    Carregar Mais Eventos
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                </section>  
+            </main>
+
+            {/* Modal para Criar Evento */}
+            {showModal && (
+                <div className="modal fade show" style={{display: 'block'}} tabIndex="-1">
+                    <div className="modal-dialog modal-lg">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title">Criar Novo Evento</h5>
+                                <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
+                            </div>
+                            <div className="modal-body">
+                                <form onSubmit={(e) => { e.preventDefault(); createEvent(); }}>
+                                    <div className="row">
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="eventTitle" className="form-label">Título do Evento *</label>
+                                            <input 
+                                                type="text" 
+                                                className="form-control" 
+                                                id="eventTitle" 
+                                                value={eventForm.title}
+                                                onChange={(e) => setEventForm({...eventForm, title: e.target.value})}
+                                                required 
+                                            />
+                                        </div>
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="eventCategory" className="form-label">Categoria *</label>
+                                            <select 
+                                                className="form-select" 
+                                                id="eventCategory"
+                                                value={eventForm.category}
+                                                onChange={(e) => setEventForm({...eventForm, category: e.target.value})}
+                                                required
+                                            >
+                                                <option value="">Selecione uma categoria</option>
+                                                <option value="musica">Música</option>
+                                                <option value="arte">Arte</option>
+                                                <option value="conversa">Conversa</option>
+                                                <option value="exercicio">Exercício</option>
+                                                <option value="culinaria">Culinária</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="eventDescription" className="form-label">Descrição *</label>
+                                        <textarea 
+                                            className="form-control" 
+                                            id="eventDescription" 
+                                            rows="3"
+                                            value={eventForm.description}
+                                            onChange={(e) => setEventForm({...eventForm, description: e.target.value})}
+                                            required
+                                        ></textarea>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="eventDate" className="form-label">Data *</label>
+                                            <input 
+                                                type="date" 
+                                                className="form-control" 
+                                                id="eventDate"
+                                                value={eventForm.date}
+                                                onChange={(e) => setEventForm({...eventForm, date: e.target.value})}
+                                                required 
+                                            />
+                                        </div>
+                                        <div className="col-md-6 mb-3">
+                                            <label htmlFor="eventTime" className="form-label">Horário *</label>
+                                            <input 
+                                                type="time" 
+                                                className="form-control" 
+                                                id="eventTime"
+                                                value={eventForm.time}
+                                                onChange={(e) => setEventForm({...eventForm, time: e.target.value})}
+                                                required 
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-md-8 mb-3">
+                                            <label htmlFor="eventLocation" className="form-label">Local *</label>
+                                            <input 
+                                                type="text" 
+                                                className="form-control" 
+                                                id="eventLocation"
+                                                value={eventForm.location}
+                                                onChange={(e) => setEventForm({...eventForm, location: e.target.value})}
+                                                required 
+                                            />
+                                        </div>
+                                        <div className="col-md-4 mb-3">
+                                            <label htmlFor="eventCapacity" className="form-label">Capacidade</label>
+                                            <input 
+                                                type="number" 
+                                                className="form-control" 
+                                                id="eventCapacity" 
+                                                min="1"
+                                                value={eventForm.capacity}
+                                                onChange={(e) => setEventForm({...eventForm, capacity: e.target.value})}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="mb-3">
+                                        <label htmlFor="eventContact" className="form-label">Contato do Organizador *</label>
+                                        <input 
+                                            type="email" 
+                                            className="form-control" 
+                                            id="eventContact"
+                                            value={eventForm.contact}
+                                            onChange={(e) => setEventForm({...eventForm, contact: e.target.value})}
+                                            required 
+                                        />
+                                    </div>
+                                    <div className="modal-footer">
+                                        <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Cancelar</button>
+                                        <button type="submit" className="btn btn-primary">
+                                            <i className="fas fa-plus me-2"></i>Criar Evento
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            <Footer />
+        </div>
+    );
+};
+
+export default Eventos;

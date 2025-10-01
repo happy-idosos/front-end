@@ -1,3 +1,4 @@
+/* LoginVoluntario.css */
 * {
   margin: 0;
   padding: 0;
@@ -6,20 +7,19 @@
 
 body {
   font-family: "Nunito", sans-serif;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   color: #333;
   line-height: 1.6;
 }
 
-.container {
-  max-width: 450px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+.login-voluntario {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  padding: 20px;
+  position: relative;
 }
 
 /* Back Button */
@@ -27,7 +27,7 @@ body {
   position: fixed;
   top: 1.5rem;
   left: 1.5rem;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   border: 2px solid #244a96;
   color: #244a96;
   padding: 0.75rem 1.25rem;
@@ -42,6 +42,7 @@ body {
   transition: all 0.3s ease;
   z-index: 1000;
   box-shadow: 0 4px 15px rgba(36, 74, 150, 0.15);
+  backdrop-filter: blur(10px);
 }
 
 .back-btn:hover {
@@ -49,6 +50,18 @@ body {
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(36, 74, 150, 0.25);
+}
+
+/* Container */
+.container {
+  max-width: 450px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-height: auto;
 }
 
 /* Logo Section */
@@ -61,6 +74,8 @@ body {
   height: 80px;
   width: auto;
   margin-bottom: 1rem;
+  border-radius: 50%;
+  object-fit: cover;
   filter: drop-shadow(0 4px 8px rgba(36, 74, 150, 0.2));
 }
 
@@ -79,11 +94,11 @@ body {
 
 /* Form Container */
 .form-container {
-  background: white;
-  border-radius: 20px;
-  padding: 2.5rem;
-  box-shadow: 0 15px 35px rgba(36, 74, 150, 0.1);
-  border: 1px solid rgba(36, 74, 150, 0.1);
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  border: none;
 }
 
 /* Form Sections */
@@ -114,6 +129,7 @@ input {
   font-size: 1rem;
   transition: all 0.3s ease;
   background: white;
+  width: 100%;
 }
 
 input:focus {
@@ -144,16 +160,21 @@ input::placeholder {
   padding: 0.25rem;
   border-radius: 4px;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .toggle-password:hover {
   color: #244a96;
+  background: rgba(36, 74, 150, 0.1);
 }
 
 /* Forgot Password */
 .forgot-password {
   text-align: right;
-  margin-top: 0.5rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Links */
@@ -162,10 +183,12 @@ input::placeholder {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .link:hover {
   text-decoration: underline;
+  color: #1a3a7a;
 }
 
 /* Submit Button */
@@ -186,7 +209,7 @@ input::placeholder {
   margin-bottom: 1.5rem;
 }
 
-.submit-btn:hover {
+.submit-btn:hover:not(:disabled) {
   background: linear-gradient(135deg, #1a3a7a, #112a63);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(36, 74, 150, 0.3);
@@ -195,6 +218,12 @@ input::placeholder {
 .submit-btn:disabled {
   cursor: not-allowed;
   opacity: 0.7;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-text {
+  display: inline;
 }
 
 .btn-loading {
@@ -202,6 +231,14 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.submit-btn:disabled .btn-text {
+  display: none;
+}
+
+.submit-btn:disabled .btn-loading {
+  display: flex;
 }
 
 .spinner {
@@ -240,6 +277,7 @@ input::placeholder {
   border-radius: 10px;
   margin-bottom: 1.5rem;
   font-weight: 500;
+  text-align: center;
 }
 
 .alert-success {
@@ -257,10 +295,12 @@ input::placeholder {
 /* Form Validation */
 .error {
   border-color: #dc3545 !important;
+  background-color: #f8d7da;
 }
 
 .success {
   border-color: #28a745 !important;
+  background-color: #d4edda;
 }
 
 .error-message {
@@ -270,11 +310,58 @@ input::placeholder {
   font-weight: 500;
 }
 
+/* Password Icons */
+.eye-icon,
+.eye-off-icon {
+  display: block;
+}
+
+.eye-off-icon {
+  display: none;
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page Load Animation */
+.container {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-  .container {
+  .login-voluntario {
     padding: 1rem;
+  }
+
+  .container {
+    padding: 2rem;
     max-width: 100%;
+    margin: 0;
   }
 
   .back-btn {
@@ -291,13 +378,14 @@ input::placeholder {
   .logo-section p {
     font-size: 1rem;
   }
-
-  .form-container {
-    padding: 2rem;
-  }
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
   .logo {
     height: 60px;
   }
@@ -306,28 +394,42 @@ input::placeholder {
     font-size: 1.6rem;
   }
 
-  .form-container {
-    padding: 1.5rem;
-    border-radius: 15px;
-  }
-
   input {
     padding: 0.875rem;
   }
-}
 
-/* Animation */
-.fade-in {
-  animation: fadeIn 0.6s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  .submit-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .back-btn {
+    border-width: 3px;
+  }
+  
+  input {
+    border-width: 2px;
+  }
+  
+  .submit-btn {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .spinner {
+    animation: none;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
   }
 }
